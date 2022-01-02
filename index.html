@@ -252,7 +252,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Jakov Kristović 2020</small></div>
+            <div class="container"><small>Copyright © Jakov Kristović&nbsp;<span id="year-container">2022</span></small></div>
         </div>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
@@ -526,6 +526,8 @@
                 var data = new FormData(form);
                 ajax(form.method, form.action, data, success, error);
               });
+
+              setCurrentYear();
             });
             
             // helper function for sending an AJAX request
@@ -543,6 +545,11 @@
                 }
               };
               xhr.send(data);
+            }
+
+            function setCurrentYear(){
+                let yearContainer = document.getElementById('year-container');
+                yearContainer.textContent = new Date().getFullYear();
             }
           </script>
     </body>
