@@ -379,20 +379,29 @@
           var name = $("#name").val();
           var email = $("#email").val();
           var message = $("#message").val();
-          $.ajax({
-              type: "POST",
-              url: "https://formspree.io/mvowlwon",
-              data: "name=" + name + "&email=" + email + "&message=" + message,
-              success : function(text){
-                  if (text == "success"){
-                      formSuccess();
-                    } else {
-                      formError();
-                      submitMSG(false,text);
-                    }
-                }
-            });
+
+          let data = "name=" + name + "&email=" + email + "&message=" + message;
+          ajax("POST", "https://formspree.io/mvowlwon", data);
         }
+
+        // helper function for sending an AJAX request
+          
+        function ajax(method, url, data) {
+          var xhr = new XMLHttpRequest();
+          xhr.open(method, url);
+          xhr.setRequestHeader("Accept", "application/json");
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+              formSuccess();
+            } else {
+              formError();
+              submitMSG(false, xhr.response);
+            }
+          };
+          xhr.send(data);
+        }
+
         function formSuccess(){
             $("#contactForm")[0].reset();
             submitMSG(true, "Message Sent!")
