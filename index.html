@@ -1,560 +1,992 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
         <title>Jakov Kristović - Software Engineer</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-        <link rel="manifest" href="site.webmanifest">
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Jakov Kristović - Software Engineer's personal website" />
+        <meta name="developer" content="Jakov Kristović">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- FAV AND ICONS   -->        
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/site.webmanifest">
+        
+        <!-- Google Font-->
+        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <!-- Open Layers -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css" type="text/css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css">
+        <!-- Animate CSS-->
+        <link rel="stylesheet" href="assets/plugins/css/animate.css">
+        <!-- Owl Carousel CSS-->
+        <link rel="stylesheet" href="assets/plugins/css/owl.css">
+        <!-- Fancybox-->
+        <link rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
+        <!-- Custom CSS-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        
+        <!-- Colors -->
+        <link rel="alternate stylesheet" href="assets/css/colors/blue.css" title="blue">
+        <link rel="stylesheet" href="assets/css/colors/defauld.css" title="defauld">
+        <link rel="alternate stylesheet" href="assets/css/colors/green.css" title="green">
+        <link rel="alternate stylesheet" href="assets/css/colors/blue-munsell.css" title="blue-munsell">
+        <link rel="alternate stylesheet" href="assets/css/colors/orange.css" title="orange">
+        <link rel="alternate stylesheet" href="assets/css/colors/purple.css" title="purple">
+        <link rel="alternate stylesheet" href="assets/css/colors/slate.css" title="slate">
+        <link rel="alternate stylesheet" href="assets/css/colors/yellow.css" title="yellow">
     </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Jakov Kristović</a>
-                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+    <body class="dark-vertion black-bg">
+        <!-- Start Loader -->
+        <div class="section-loader">
+            <div class="loader">
+                <div></div>
+                <div></div> 
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5 rounded-circle" src="assets/img/avatar.jpeg" alt="Profile image" />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Jakov Kristović</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+        </div>
+        <!-- End Loader -->
+        
+        <!--
+        ===================
+           NAVIGATION
+        ===================
+        -->
+        <header class="black-bg mh-header mh-fixed-nav nav-scroll mh-xs-mobile-nav wow fadeInUp" id="mh-header">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg mh-nav nav-btn">
+                        <a class="navbar-brand ml-2" href="#">
+                            <img src="assets/images/apple-touch-icon.png" style="max-width: 69px; max-height: 69px;" alt="logo" class="img-fluid">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon icon"></span>
+                        </button>
+                    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-0 ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#mh-home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-skills">Skills</a>
+                                </li>                                
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-experience">Experiences</a>
+                                </li>                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-portfolio">Portfolio</a>
+                                </li>                               
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-blog">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Software Engineer - IT Consultant</p>
-                <p class="masthead-subheading font-weight-light mb-0 mt-2"> <i class="fas fa-graduation-cap"></i> Master's degree in Informatics @ <a href="https://www.foi.unizg.hr/" class="text-white">FOI</a></p>
             </div>
         </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+        
+        <!--
+        ===================
+            HOME 
+        ===================
+        -->
+        <section class="mh-home" id="mh-home">
+            <div class="home-ovimg">
+                <div class="container">
+                    <div class="row xs-column-reverse section-separator vertical-middle-content home-padding">
+                        <div class="col-sm-6">
+                            <div class="mh-header-info">
+                                <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                                    <span>Hello I'm</span>
+                                </div>
+                                
+                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Jakov Kristović</h2>
+                                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Software Engineer</h4>
+                                
+                                <ul>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-graduation-cap"></i>Master's degree in Informatics @ <a href="https://www.foi.unizg.hr/">FOI</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-envelope"></i><a href="mailto:">kristovic.jakov@gmail.com</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-map-marker"></i><address>Dubrovnik, Croatia</address></li>
+                                </ul>
+                                
+                                <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                    <li><a href="https://www.linkedin.com/in/jakovkristovic/"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://github.com/TheJakov"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="https://www.facebook.com/jakov.kristovic"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.instagram.com/jakovk7/"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/carina_vet.png" alt="" />
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                <div class="img-border">
+                                    <img src="assets/images/hero.png" alt=""  class="img-fluid">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/car_rs.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/manual.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/video_games_rs.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/mranger.png" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/scraper.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-dark" href="https://www.linkedin.com/in/jakovkristovic/">
-                        <i class="fas fa-code mr-2"></i>
-                        View all projects on LinkedIn!
-                    </a>
                 </div>
             </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
+        </section>   
+        
+        <!--
+        ==================
+            ABOUT
+        =================
+        -->
+        <section class="mh-about" id="mh-about">
             <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ml-auto">
-                        <p class="lead">Jakov is a Software Engineer located in Dubrovnik, Croatia. Jakov often uses <a href="https://dotnet.microsoft.com/" class="text-white font-weight-bold">.NET technologies</a> for making Web applications, while using Flutter and Unity for mobile projects.</p>
-                        <p class="lead">Passionate about using machine learning while developing new and interesting intelligent recommender systems, some of which are publicly available on his GitHub repo.</p>
+                <div class="row section-separator">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                            <img src="assets/images/se2.webp" alt="software engineer" class="img-fluid" style="border-radius: 15px;">
+                        </div>
                     </div>
-                    <div class="col-lg-4 mr-auto">
-                        <p class="lead">Lately, Jakov is focused on developing next-gen AR application using Unity engine. More information on this topic will be available soon.</p>
-                        <p class="lead">Stay tuned!</p>
-                    </div>
-                </div>
-                <!-- About Section Button-->
-                <!--
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
-                        <i class="fas fa-download mr-2"></i>
-                        Free Download!
-                    </a>
-                </div>
-                -->
-            </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form id="contactForm" novalidate="novalidate" action="https://formspree.io/mvowlwon" method="POST">
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Name</label>
-                                    <input class="form-control" id="name" name="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-inner">
+                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
+                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Hello, I’m a Jakov, experienced software engineer based in Dubrovnik. 
+                            Skilled in Databases, C#, developing Web & Desktop applications, often using <a href="https://dotnet.microsoft.com/" class="font-weight-bold j-highlight">.NET technologies</a>.
+                            Lately, I am developing new mobile apps using Flutter.</p>
+                            <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <ul>
+                                    <li><span>C#</span></li>
+                                    <li><span>html</span></li>
+                                    <li><span>css</span></li>
+                                    <li><span>JavaScript</span></li>
+                                    <li><span>.NET Framework</span></li>
+                                    <li><span>.NET Core</span></li>
+                                    <li><span>ASP .NET</span></li>
+                                    <li><span>Flutter</span></li>
+                                    <li><span>Unity</span></li>
+                                    <li><span>SQL Server</span></li>
+                                    <li><span>artificial intelligence</span></li>
+                                    <li><span>agumented reality</span></li>
+                                </ul>
                             </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Email Address</label>
-                                    <input class="form-control" id="email" name="_replyto" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Phone Number</label>
-                                    <input class="form-control" id="phone" name="phone_number" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Message</label>
-                                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <br />
-                            <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
-                        </form>
-                        <div class="mt-5 col-md-auto">
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-outline-dark btn-social mx-1" href="mailto:kristovic.jakov@gmail.com"><i class="far fa-fw fa-envelope"></i></a>
-                                    <span class="align-middle ml-2 lead" style="margin-top: auto; margin-bottom: auto;">Contact me using your email client</span>
-                            </div>
+                            <a href="https://www.linkedin.com/in/jakovkristovic/" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Check me out on LinkedIn<i class="fa fa-linkedin-square"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
+        
+        <!--
+        ===================
+           SERVICE
+        ===================
+        -->
+        <section class="mh-service">
             <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            Dubrovnik, Croatia
-                        </p>
+                <div class="row section-separator">
+                    <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>What I do</h3>
                     </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/jakovkristovic/"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/TheJakov"><i class="fab fa-fw fa-github"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/jakov.kristovic"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/jakovk7/"><i class="fab fa-fw fa-instagram"></i></a>
+                    <div class="col-sm-4">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <i class="fa fa-bullseye purple-color"></i>
+                            <h3>Software Engineering</h3>
+                            <p>
+                                Taking on the critical roles of turning business needs into technology 
+                                solutions - from defining system requirements and designing technical solutions, 
+                                to developing and testing various features that suit business needs. 
+                            </p>
+                        </div>
                     </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About My Site</h4>
-                        <p class="lead mb-0">
-                            This site is created using MIT licensed Bootstrap theme, created by
-                            <a href="https://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
+                    <div class="col-sm-4">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <i class="fa fa-code iron-color"></i>
+                            <h3>Web Development</h3>
+                            <p>
+                                Building attractive and functional websites, which will give away professional and user-friendly 
+                                feel, always aiming to reflect a business that is trustworthy, relevant and client or consumer-centric.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                            <i class="fa fa-object-ungroup sky-color"></i>
+                            <h3>App Development</h3>
+                            <p>
+                                Developing modern mobile apps with eye-catching UI, lately focused on creating agumented reality 
+                                (AR) experiences that will allow us to manipulate the world in ways we previously only imagined.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Jakov Kristović&nbsp;<span id="year-container">2022</span></small></div>
-        </div>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-        <div class="scroll-to-top d-lg-none position-fixed">
-            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
-        </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">Croatian Customs VET App</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
+        </section>       
+        
+        <!--
+        ===================
+           SKILLS
+        ===================
+        -->
+        <section class="mh-skills" id="mh-skills">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="section-title text-center col-sm-12">
+                        <!--<h2>Skills</h2>-->
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-skills-inner">
+                            <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <h3>Technical Skills</h3>
+                                <div class="each-skills">
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">C#</div>
+                                                <div class="percentagem-num">93%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 93%;"></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/carina_vet.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="text-info">[EARLY DEVELOPMENT STAGE]</p>
-                                    <p class="mb-5 text-justify">The very purpose of this application is to help Croatian Customs officers in the inspection of pets, which may consist of several different steps with multiple legislative regulations, and is just one of the many tasks that staff must perform on a daily basis.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">SQL Server</div>
+                                                <div class="percentagem-num">91%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 91%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">JavaScript</div>
+                                                <div class="percentagem-num">85%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 85%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Unity</div>
+                                                <div class="percentagem-num">63%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 63%;"></div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Flutter</div>
+                                                <div class="percentagem-num">47%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 47%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <h3>Professional Skills</h3>
+                            <ul class="mh-professional-progress" >
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="90"></div>
+                                    <div class="pr-skill-name">Communication</div>
+                                </li>
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="95"></div> 
+                                    <div class="pr-skill-name">Team Work</div>
+                                </li>
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="70"></div>
+                                    <div class="pr-skill-name">Project Management</div>
+                                </li> 
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress=" 80"></div>
+                                    <div class="pr-skill-name">Creativity</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           EXPERIENCES
+        ===================
+        -->
+        <section class="mh-experince" id="mh-experience">
+            <div class="bolor-overlay">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-education">
+                                 <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
+                                <div class="mh-education-deatils">
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                        <h4>Master's degree in Informatics From <a href="https://www.foi.unizg.hr/">Faculty of Organization and Informatics</a></h4>
+                                        <div class="mh-eduyear">2018-2020</div>
+                                        <p>Databases and Knowledge Bases - My master's thesis was on the topic of creating intelligent recommender systems using machine learning and artificial intelligence.</p>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                        <h4>Bachelor's degree in Informational Systems <a href="https://www.foi.unizg.hr/">Faculty of Organization and Informatics</a></h4>
+                                        <div class="mh-eduyear">2015-2018</div>
+                                        <p>Informational systems - At this point I was sharping my skills to become a software engineer and do what I love the most - develop cool things which will find their purposes in real life.</p>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-work">
+                                 <h3>Work Experience</h3>
+                                <div class="mh-experience-deatils">                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <h4>Software Engineer at <a href="https://www.laus.hr/">Laus CC</a></h4>
+                                        <div class="mh-eduyear">Aug 2020 - present</div>
+                                        <span>Roles: </span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-calendar">&nbsp;Oct 2021 - present</i>.NET Software Engineer</li>
+                                            <li><i class="fa fa-calendar">&nbsp;Aug 2020 - Oct 2021</i>Junior .NET Software Engineer</li>
+                                        </ul>
+                                        <span>Responsibility :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Software engineering & development</li>
+                                            <li><i class="fa fa-circle"></i>Database engineering</li>
+                                            <li><i class="fa fa-circle"></i>Mentoring junior software developers</li>
+                                        </ul>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                        <h4>Software Engineer Intern at <a href="https://phobs.net/">PHOBS</a></h4>
+                                        <div class="mh-eduyear">Feb 2020 - Jul 2020</div>
+                                        <span>Responsibility :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Web development</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Car Recommendation System</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/car_rs.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-2 text-justify">This application was developed as part of my graduate thesis, which was in domain of recommender systems. The application performs user profiling and, based on his preferences, suggests to the user top car recommendations that might suit him.</p>
-                                    <p class="mb-5 text-justify">
-                                        Application has two components that generate generations:
-                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a) <b>custom made scoring algorithm</b> and
-                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b) <b>ML model crated via ML .NET machine learning framework</b>.
-                                    </p>
-                                    <a class="btn btn-outline-secondary mr-2" href="https://github.com/TheJakov/CarRecommendationSystem">
-                                        <i class="fab fa-github"></i>
-                                        GitHub
-                                    </a>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+        </section>
+        
+        <!--
+        ===================
+           PORTFOLIO
+        ===================
+        -->
+        <section class="mh-portfolio" id="mh-portfolio">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                        <h3>Recent Portfolio</h3>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">Croatian Customs - Development of digital educational materials</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/manual.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-2 text-justify">Development of digital educational materials in form of manual for additional staff training in cooperation with <a href="https://carina.gov.hr/">Croatian Customs</a> office.</p>
-                                    <p class="mb-2 text-justify">The purpose of the materials produced is to improve the knowledge and awareness of the trainees, in order to improve the performance of their daily work and give them a broader picture of the skills and current trends of smugglers.</p>
-                                    <p class="mb-5 text-justify">More specific details regarding the project are not given here due to the data confidentiality.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+                    <div class="part col-sm-12">
+                        <div class="portfolio-nav col-sm-12" id="filter-button">
+                            <ul>
+                                <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"> <span>All Categories</span></li>
+                                <li data-filter=".machine-learning" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s"><span>Machine learning</span></li>
+                                <li data-filter=".gov-apps" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><span>Goverment</span></li>
+                                <li data-filter=".stem" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><span>STEM</span></li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Video Game Recommendation Engine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/video_games_rs.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5 text-justify">Intelligent system (application) for user profiling and proposing the most suitable video games. Developed using .NET technologies and ML .NET (an open source and cross-platform machine learning framework).</p>
-                                    <a class="btn btn-outline-secondary mr-2" href="https://github.com/TheJakov/VideoGameRecommendationEngineAI">
-                                        <i class="fab fa-github"></i>
-                                        GitHub
-                                    </a>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
+                        <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <div class="portfolioContainer row">
+                                
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 gov-apps">
+                                    <figure>
+                                        <img src="assets/images/portfolio/safe5_preview.png" alt="Carina VET preview">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">VET App</h5>
+                                            <span class="sub-title">Croatian Customs</span>
+                                            <a href="assets/images/portfolio/safe5_preview.png" data-fancybox data-src="#safe5"></a>
+                                        </figcaption>
+                                    </figure>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">STEM Revolution - mRanger</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/mranger.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-2 text-justify">Developed and designed an Android based app where mobile phone communicates with m:Bot via Bluetooth. My role was as an C++ (Visual Studio/Arduino), Prolog (SWI-Prolog), PHP and Android Java developer (Android Studio). For application development, SCRUM agile methodology was used.</p>
-                                    <p class="mb-5 text-justify">Purpose of project was making some learning materials for high school students of Croatia, with which they could learn more about first steps in Android development and concepts of logical programming. The m:Bot Ranger device communicates with the Android mobile application via Bluetooth. The Android application allows remote control of the m:Bot Ranger device and calculation and display of the current temperature measured by the device. The application also allows you to change the speed of the m: bot Ranger device. Measured temperature was processed via Prolog to make some inference about current weather season and temperature for a certain time of day. Website using Prolog in combination with PHP should be still available at <a href="https://mranger.foi.hr/">mranger.foi.hr</a></p>
-                                    <a class="btn btn-outline-secondary mr-2" href="https://github.com/TheJakov/mRanger">
-                                        <i class="fab fa-github"></i>
-                                        GitHub
-                                    </a>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 gov-apps">
+                                    <figure>
+                                        <img src="assets/images/portfolio/manualApp_preview.png" alt="manual_app">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Web manual for customs inspection</h5>
+                                            <span class="sub-title">Croatian Customs</span>
+                                            <a href="assets/images/portfolio/manualApp_preview.png" data-fancybox data-src="#manualapp"></a>
+                                        </figcaption>
+                                    </figure>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">newsTracker</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/scraper.png" alt="" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Multi-agent news tracking system made in Python using SPADE platform.</p>
-                                    <a class="btn btn-outline-secondary mr-2" href="https://github.com/TheJakov/newsTracker">
-                                        <i class="fab fa-github"></i>
-                                        GitHub
-                                    </a>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 machine-learning">
+                                    <figure>
+                                        <img src="assets/images/portfolio/car_recomm_system.jpg" alt="car_recomm_system">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Car Recommendation System</h5>
+                                            <span class="sub-title">Recommender systems</span>
+                                            <a href="assets/images/portfolio/car_recomm_system.jpg" data-fancybox data-src="#carrecomm"></a>
+                                        </figcaption>
+                                    </figure>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script>
-            window.addEventListener("DOMContentLoaded", function() {
-          
-              // get the form elements defined in your form HTML above
-              
-              var form = document.getElementById("contactForm");
-              var button = document.getElementById("sendMessageButton");
-              var status = document.getElementById("success");
-          
-              // Success and Error functions for after the form is submitted
-              
-              function success() {
-                form.reset();
-                button.style = "display: none ";
-                status.innerHTML = "<strong>Your message has been sent to Jakov.</strong>";
-              }
-          
-              function error() {
-                status.innerHTML = "<strong>Your message has not been sent to Jakov.</strong>";
-              }
-          
-              // handle the form submission event
-          
-              form.addEventListener("submit", function(ev) {
-                ev.preventDefault();
-                var data = new FormData(form);
-                ajax(form.method, form.action, data, success, error);
-              });
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 machine-learning">
+                                    <figure>
+                                        <img src="assets/images/portfolio/video_game_recomm_logo.png" alt="video-games-recommender">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Video Game Recommendation Engine</h5>
+                                            <span class="sub-title">Recommender systems</span>
+                                            <a href="assets/images/portfolio/video_game_recomm_logo.png" data-fancybox data-src="#vgre"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12">
+                                    <figure>
+                                        <img src="assets/images/portfolio/PassLock-logov4.png" alt="passlock">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">PassLock</h5>
+                                            <span class="sub-title">Password manager</span>
+                                            <a href="assets/images/portfolio/PassLock-logov4.png" data-fancybox data-src="#passlock"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 stem">
+                                    <figure>
+                                        <img src="assets/images/portfolio/stem.png" alt="mranger">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">mRanger</h5>
+                                            <span class="sub-title">STEM</span>
+                                            <a href="assets/images/portfolio/stem.png" data-fancybox data-src="#mranger"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12">
+                                    <figure>
+                                        <img src="assets/images/portfolio/newstracker.png" alt="newstracker">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">newsTracker</h5>
+                                            <span class="sub-title">Multi-agent news tracking system</span>
+                                            <a href="assets/images/portfolio/newstracker.png" data-fancybox data-src="#newsTracker"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div> <!-- End: .grid .project-gallery -->
+                        </div> <!-- End: .grid .project-gallery -->
+                    </div> <!-- End: .part -->
+                </div> <!-- End: .row -->
 
-              setCurrentYear();
-            });
-            
-            // helper function for sending an AJAX request
-          
-            function ajax(method, url, data, success, error) {
-              var xhr = new XMLHttpRequest();
-              xhr.open(method, url);
-              xhr.setRequestHeader("Accept", "application/json");
-              xhr.onreadystatechange = function() {
-                if (xhr.readyState !== XMLHttpRequest.DONE) return;
-                if (xhr.status === 200) {
-                  success(xhr.response, xhr.responseType);
-                } else {
-                  error(xhr.status, xhr.response, xhr.responseType);
-                }
-              };
-              xhr.send(data);
-            }
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-xl btn-outline-dark" href="https://www.linkedin.com/in/jakovkristovic/">
+                            <i class="fa fa-code"></i>
+                            View all projects on LinkedIn!
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-            function setCurrentYear(){
+            <!-- newsTracker -->
+            <div class="mh-portfolio-modal" id="newsTracker">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>NewsTracker</h2>
+                            <p>Multi-agent news tracking system made in Python using SPADE platform.</p>            
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>python</span></li>
+                                    <li><span>agent</span></li>
+                                    <li><span>news</span></li>
+                                    <li><span>scraping</span></li>
+                                    <li><span>mulitagent-systems</span></li>
+                                    <li><span>spade</span></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://github.com/TheJakov/newsTracker" class="btn btn-outline-secondary">
+                                <i class="fa fa-github"></i>&nbsp;Github
+                            </a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/portfolio/newstracker.png" alt="newstracker" class="img-fluid">
+                                <p>System architecture</p>       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END newsTracker -->
+
+            <!-- mRanger -->
+            <div class="mh-portfolio-modal" id="mranger">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>mRanger</h2>
+                            <p>Developed and designed an Android based app where mobile phone communicates with m:Bot via Bluetooth. My role was as an C++ (Visual Studio/Arduino), 
+                                Prolog (SWI-Prolog), PHP and Android Java developer (Android Studio). For application development, SCRUM agile methodology was used.
+                            </p>
+                            <p>Purpose of project was making some learning materials for high school students of Croatia, with which they could learn more about first steps in 
+                                Android development and concepts of logical programming. The m: bot Ranger device communicates with the Android mobile application via Bluetooth. 
+                                The Android application allows remote control of the m:Bot Ranger device and calculation and display of the current temperature measured by the 
+                                device. The application also allows you to change the speed of the m:Bot Ranger device. Measured temperature was processed via Prolog to make some 
+                                inference about current weather season and temperature for a certain time of day. Website using Prolog in combination with PHP should be 
+                                still available at mranger.foi.hr
+                            </p>            
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>android</span></li>
+                                    <li><span>java</span></li>
+                                    <li><span>robotics</span></li>
+                                    <li><span>stem</span></li>
+                                    <li><span>php</span></li>
+                                    <li><span>sensor</span></li>
+                                    <li><span>bluetooth</span></li>
+                                    <li><span>swi-prolog</span></li>
+                                    <li><span>mysql</span></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://github.com/TheJakov/mRanger" class="btn btn-outline-secondary">
+                                <i class="fa fa-github"></i>&nbsp;Github
+                            </a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/portfolio/mranger-syst-arch.png" alt="mranger-syst-arch" class="img-fluid">
+                                <p>Simple overview of data flows</p>
+                                <img src="assets/images/portfolio/mranger-disp-1.png" alt="mranger-disp-1" class="img-fluid">
+                                <p>UI overview</p>
+                                <img src="assets/images/portfolio/mranger-disp-2.png" alt="mranger-disp-2" class="img-fluid">
+                                <p>Measuring temperature</p>           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END mRanger -->
+
+            <!-- PassLock -->
+            <div class="mh-portfolio-modal" id="passlock">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>PassLock</h2>
+                            <p>The application allows the user to enter and/or generate the desired password and save it in a hashed format.</p>
+                            
+                            <p>The user has a record of his stored hash passwords in the application and can easily copy and use the password to
+                                 log in with his account to the services or social networks he uses.</p>
+
+                            <p>The purpose of this application is to increase security on the Internet, ie encourage the use of passwords that 
+                                are difficult to crack using some typical 'Dictionary Attack' or similar brute force methods.
+                            </p>            
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>C#</span></li>
+                                    <li><span>security</span></li>
+                                    <li><span>encryption</span></li>
+                                    <li><span>password-manager</span></li>
+                                    <li><span>desktop</span></li>
+                                    <li><span>sqlite</span></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://github.com/TheJakov/PassLock" class="btn btn-outline-secondary">
+                                <i class="fa fa-github"></i>&nbsp;Github
+                            </a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/portfolio/passlock-disp1.PNG" alt="passlock-disp1" class="img-fluid">
+                                <p>UI overview</p>
+                                <img src="assets/images/portfolio/passlock-disp2.PNG" alt="passlock-disp2" class="img-fluid">
+                                <p>UI overview #2</p>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PassLock -->
+
+            <!-- Video Game Recommendation Engine -->
+            <div class="mh-portfolio-modal" id="vgre">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>Video Game Recommendation Engine</h2>
+                            <p>Intelligent system (application) for user profiling and proposing the most suitable video games. 
+                                Developed using .NET technologies and ML .NET (an open source and cross-platform machine learning framework).</p>
+                                
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>C#</span></li>
+                                    <li><span>gaming</span></li>
+                                    <li><span>recommender-systems</span></li>
+                                    <li><span>intelligent-systems</span></li>
+                                    <li><span>desktop</span></li>
+                                    <li><span>machine-learning</span></li>
+                                    <li><span>ML.NET</span></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://github.com/TheJakov/VideoGameRecommendationEngineAI" class="btn btn-outline-secondary">
+                                <i class="fa fa-github"></i>&nbsp;Github
+                            </a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/portfolio/vgre_1.png" alt="video-games-recommender-preview" class="img-fluid">
+                                <p>Home screen</p>
+                                <img src="assets/images/portfolio/vgre_2.png" alt="video-games-recommender-profiling" class="img-fluid">
+                                <p>Example of a question in user profiling</p>
+                                <img src="assets/images/portfolio/vgre_3.png" alt="video-games-recommender-profiling" class="img-fluid">
+                                <p>Example of a question in user profiling #2</p>
+                                <img src="assets/images/portfolio/vgre_4.png" alt="video-games-recommender-profiling" class="img-fluid">
+                                <p>Example of a question in user profiling #3</p>
+                                <img src="assets/images/portfolio/vgre_5.png" alt="video-games-recommender-results" class="img-fluid">
+                                <p>Result - end screen (two profiling algorithms)</p>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Video Game Recommendation Engine -->
+
+            <!-- Car Recommendation System -->
+            <div class="mh-portfolio-modal" id="carrecomm">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>Car Recommendation System</h2>
+                            <p>This application was developed as part of my graduate thesis, which was in domain of recommender systems. The application performs
+                                 user profiling and, based on his preferences, suggests to the user top car recommendations that might suit him.</p>
+
+                            <p>Application has two components that generate recommendations:</p>
+                            <ol>
+                                <li>custom made scoring algorithm and</li>
+                                <li>ML model crated via ML .NET machine learning framework.</li>
+                            </ol>
+
+                            <p>You can even check out <a href="https://www.youtube.com/watch?v=RdYZqLjNA_o" class="font-weight-bold j-highlight">video preview</a>.</p>
+                                
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>C#</span></li>
+                                    <li><span>cars</span></li>
+                                    <li><span>recommender-systems</span></li>
+                                    <li><span>intelligent-systems</span></li>
+                                    <li><span>desktop</span></li>
+                                    <li><span>machine-learning</span></li>
+                                    <li><span>ML.NET</span></li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://github.com/TheJakov/CarRecommendationSystem" class="btn btn-outline-secondary">
+                                <i class="fa fa-github"></i>&nbsp;Github
+                            </a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/portfolio/crs_1.png" alt="car-recommender-preview" class="img-fluid">
+                                <p>Home screen</p>
+                                <img src="assets/images/portfolio/crs_2.png " alt="car-recommender-profiling" class="img-fluid">
+                                <p>Example of a question in user profiling</p>
+                                <img src="assets/images/portfolio/crs_3.png" alt="car-recommender-profiling" class="img-fluid">
+                                <p>Example of a question in user profiling #2</p>
+                                <img src="assets/images/portfolio/crs_4.png" alt="car-recommender-profiling" class="img-fluid">
+                                <p>Example of a question in user profiling #3</p>
+                                <img src="assets/images/portfolio/crs_results.png" alt="car-recommender-results" class="img-fluid">
+                                <p>Result - end screen (two profiling algorithms)</p>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Car Recommendation System -->
+
+            <!-- Manual app -->
+            <div class="mh-portfolio-modal" id="manualapp">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>Web manual for customs inspection</h2>
+                            <p>Development of digital educational materials in form of manual for additional staff training in cooperation with Croatian Customs office.</p>
+
+                            <p>The purpose of the materials produced is to improve the knowledge and awareness of the trainees, in order to improve the performance of 
+                                their daily work and give them a broader picture of the skills and current trends of smugglers.</p>
+
+                            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration.
+                                Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
+                            
+                            <p>Even though government departments are very sluggish today and have a hard time deciding and generally expressing a wish for big changes, 
+                                at the end of the day, they were ACCEPTED as new customs' projects. One project already went in the process of applying for EU funds, 
+                                while this one was desired to put it into test use as early as next month.</p>
+
+                            <p>More specific details regarding the project are not given here due to the data confidentiality.</p>
+                                
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>ASP.NET MVC</span></li>
+                                    <li><span>vehicles</span></li>
+                                    <li><span>eLearning</span></li>
+                                    <li><span>inspection</span></li>
+                                    <li><span>customs</span></li>
+                                    <li><span>EU</span></li>
+                                    <li><span>goverment</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/portfolio/manualApp_preview.png" alt="manualApp_preview" class="img-fluid">
+                                <p>Part of interactive app screen</p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Manual app -->
+
+            <!-- SAFE5 app -->
+            <div class="mh-portfolio-modal" id="safe5">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>VET app</h2>
+                            <p>The very purpose of this application is to help Croatian Customs officers in the inspection of pets, which may consist 
+                                of several different steps with multiple legislative regulations, and is just one of the many tasks that staff must perform on a daily basis.</p>
+
+                            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration.
+                                Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
+                            
+                            <p>Even though government departments are very sluggish today and have a hard time deciding and generally expressing a wish for big changes, 
+                                at the end of the day, they were ACCEPTED as new customs' projects. This project already went in the process of applying for EU funds, 
+                                while another one was desired to put it into test use as early as next month.</p>
+
+                            <p>More specific details regarding the project are not given here due to the data confidentiality.</p>
+                                
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>web</span></li>
+                                    <li><span>mobile</span></li>
+                                    <li><span>customs</span></li>
+                                    <li><span>EU</span></li>
+                                    <li><span>goverment</span></li>
+                                    <li><span>pets</span></li>
+                                    <li><span>prototype</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/portfolio/safe5_preview.png" alt="safe5_preview" class="img-fluid">
+                                <p>Prototype preview</p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SAFE5 -->
+
+        </section>
+        
+        <!--
+        ===================
+           BLOG
+        ===================
+        -->
+        <section class="mh-blog" id="mh-blog">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Featured Posts</h3>
+                    </div>
+                    <div class="col-md-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                        <h4>Blog content is cooming soon.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           FOOTER 1
+        ===================
+        -->
+        <footer class="mh-footer" id="mh-contact">
+            <div class="map-image image-bg">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                            <h3>Contact Me</h3>
+                        </div>
+                        <div class="col-sm-12 mh-footer-address">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                        <div class="each-icon">
+                                            <i class="fa fa-location-arrow"></i>
+                                        </div>
+                                        <div class="each-info">
+                                            <h4>Address</h4>
+                                            <address>
+                                                Dubrovnik, Croatia
+                                            </address>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                        <div class="each-icon">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </div>
+                                        <div class="each-info">
+                                            <h4>Email</h4>
+                                            <a href="mailto:kristovic.jakov@gmail.com">kristovic.jakov@gmail.com</a><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                        <div class="each-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="each-info">
+                                            <h4>Phone</h4>
+                                            <a href="mailto:kristovic.jakov@gmail.com" class="font-weight-bold j-highlight">Ask for number!</a><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <input name="name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <input name="name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input name="name" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                    </div>
+                                    <!-- Subject Button -->
+                                    <div class="btn-form col-sm-12">
+                                        <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <div class="mh-map">
+                                <div id="map" class="mh-map shadow-1"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="text-left text-xs-center">
+                                        <p>Copyright &copy; Jakov Kristović <span id="year-container">2022</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="social-icon">
+                                        <li><a href="https://www.linkedin.com/in/jakovkristovic/"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://github.com/TheJakov"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="https://www.facebook.com/jakov.kristovic"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://www.instagram.com/jakovk7/"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>     
+    
+    <!--
+    ==============
+    * JS Files *
+    ==============
+    -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <!-- jQuery -->
+    <script src="assets/plugins/js/jquery.min.js"></script>
+    <!-- popper -->
+    <script src="assets/plugins/js/popper.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/plugins/js/bootstrap.min.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/plugins/js/owl.carousel.js"></script>
+    <!-- validator -->
+    <script src="assets/plugins/js/validator.min.js"></script>
+    <!-- wow -->
+    <script src="assets/plugins/js/wow.min.js"></script>
+    <!-- mixin js-->
+    <script src="assets/plugins/js/jquery.mixitup.min.js"></script>
+    <!-- circle progress-->
+    <script src="assets/plugins/js/circle-progress.js"></script>
+    <!-- jquery nav -->
+    <script src="assets/plugins/js/jquery.nav.js"></script>
+    <!-- Fancybox js-->
+    <script src="assets/plugins/js/jquery.fancybox.min.js"></script>
+    <!-- isotope js-->
+    <script src="assets/plugins/js/isotope.pkgd.js"></script>
+    <script src="assets/plugins/js/packery-mode.pkgd.js"></script>
+    <!-- Map api -->
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+    <!-- Custom Scripts-->
+    <script src="assets/js/map-init.js"></script>
+    <script src="assets/js/custom-scripts.js"></script>
+
+    <script>
+        $(function(){
+            setCurrentYear();
+        });
+
+        function setCurrentYear(){
                 let yearContainer = document.getElementById('year-container');
                 yearContainer.textContent = new Date().getFullYear();
             }
-          </script>
-    </body>
+    </script>
+</body>
 </html>
