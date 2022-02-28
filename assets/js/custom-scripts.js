@@ -380,8 +380,9 @@
           var email = $("#email").val();
           var message = $("#message").val();
 
-          let data = "name=" + name + "&email=" + email + "&message=" + message;
-          ajax("POST", "https://formspree.io/mvowlwon", data);
+          let form = document.getElementById("contactForm");
+          let data =  new FormData(form);
+          ajax(form.method, form.action, data);
         }
 
         // helper function for sending an AJAX request
