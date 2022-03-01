@@ -375,11 +375,7 @@
           }
        });
     
-        function submitForm(){
-          var name = $("#name").val();
-          var email = $("#email").val();
-          var message = $("#message").val();
-
+        function submitForm() {
           let form = document.getElementById("contactForm");
           let data =  new FormData(form);
           ajax(form.method, form.action, data);
