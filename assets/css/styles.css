@@ -1881,11 +1881,11 @@ li .fa {
     ==============
 */
 .mh-education {
-  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .mh-work {
-  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .mh-work h3 {
