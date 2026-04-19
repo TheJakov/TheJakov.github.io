@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Jakov Kristović — Software Development Engineer</title>
+  <title>Jakov Kristović — Senior Software Development Engineer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Jakov Kristović - Software Engineer's personal website">
@@ -771,7 +771,7 @@
             <span class="cmd">echo "Hello, World!"</span>
           </p>
           <h1 class="hero-name">Jakov<br>Kristović</h1>
-          <p class="hero-subtitle">Software Development Engineer</p>
+          <p class="hero-subtitle">Senior Software Development Engineer</p>
           <ul class="hero-meta">
             <li><span class="meta-icon"><i class="fa-solid fa-briefcase"></i></span><a href="https://www.autodesk.com/">Autodesk</a></li>
             <li><span class="meta-icon"><i class="fa-solid fa-graduation-cap"></i></span>Master's in Informatics&thinsp;@&thinsp;<a href="https://www.foi.unizg.hr/">FOI</a></li>
@@ -1283,8 +1283,14 @@
     document.getElementById('year-container').textContent = new Date().getFullYear();
 
     // Nav mobile toggle
+    const navLinks = document.getElementById('nav-links');
     document.getElementById('nav-toggle').addEventListener('click', () => {
-      document.getElementById('nav-links').classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
     });
 
     // Active nav link on scroll
