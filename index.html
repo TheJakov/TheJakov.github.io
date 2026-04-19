@@ -15,7 +15,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css">
 
   <style>
     :root {
@@ -703,6 +702,60 @@
     input::placeholder, textarea::placeholder { color: var(--text-dim); }
     textarea { resize: vertical; min-height: 130px; }
 
+    /* ─── CONTACT MINIMAL ───────────────────── */
+    .contact-minimal {
+      max-width: 600px;
+      padding: 48px 0 64px;
+    }
+
+    .contact-heading {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -.02em;
+    }
+
+    .contact-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent-dim);
+      padding-bottom: 2px;
+      margin-bottom: 36px;
+      transition: color .2s, border-color .2s;
+    }
+    .contact-email:hover { color: var(--accent-bright); border-color: var(--accent-bright); }
+
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border: 1px solid var(--border-2);
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: all .2s;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
     /* ─── FOOTER BAR ─────────────────────────── */
     .footer-bar {
       display: flex;
@@ -1218,66 +1271,27 @@
   <!-- ─── CONTACT ───────────────────────────── -->
   <footer id="contact">
     <div class="container">
-      <p class="section-label">contact</p>
-      <h2 class="section-title">Contact Me</h2>
-      <div class="contact-grid">
-        <div>
-          <div class="contact-cards">
-            <div class="contact-card">
-              <div class="contact-card-icon"><i class="fa-solid fa-location-arrow"></i></div>
-              <div>
-                <h4>Location</h4>
-                <address>Dubrovnik, Croatia</address>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
-              <div>
-                <h4>Email</h4>
-                <a href="mailto:kristovic.jakov@gmail.com">kristovic.jakov@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <h4>Phone</h4>
-                <a href="mailto:kristovic.jakov@gmail.com">Ask for number!</a>
-              </div>
-            </div>
-          </div>
-          <div class="map-wrap">
-            <div id="map"></div>
-          </div>
-        </div>
-        <div>
-          <form id="contactForm" method="POST" action="https://formspree.io/f/mvowlwon" class="contact-form">
-            <div class="form-row">
-              <input name="firstName" type="text" placeholder="First Name" required>
-              <input name="lastName" type="text" placeholder="Last Name" required>
-            </div>
-            <input name="email" type="email" placeholder="Your Email" required>
-            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn btn-primary" style="justify-content:center;">Send Message</button>
-          </form>
+      <div class="contact-minimal">
+        <p class="section-label">contact</p>
+        <h2 class="contact-heading">Let's talk.</h2>
+        <p class="contact-sub">Whether it's an interesting project, a role worth discussing, or just a good engineering conversation — I'm reachable.</p>
+        <a href="mailto:kristovic.jakov@gmail.com" class="contact-email">kristovic.jakov@gmail.com</a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/jakovkristovic/" class="contact-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://github.com/TheJakov" class="contact-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.instagram.com/jakovkristovic/" class="contact-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="https://www.facebook.com/jakov.kristovic" class="contact-link"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
         </div>
       </div>
 
       <div class="footer-bar">
         <p class="footer-copy">Copyright &copy; Jakov Kristović <span id="year-container">2022</span></p>
-        <div class="footer-socials">
-          <a href="https://www.linkedin.com/in/jakovkristovic/" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://github.com/TheJakov" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.facebook.com/jakov.kristovic" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/jakovkristovic/" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+        <p class="footer-copy">Dubrovnik, Croatia</p>
       </div>
     </div>
   </footer>
 
   <!-- ─── SCRIPTS ───────────────────────────── -->
-  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
-  <script src="assets/js/map-init.js"></script>
-
   <script>
     // Year
     document.getElementById('year-container').textContent = new Date().getFullYear();
