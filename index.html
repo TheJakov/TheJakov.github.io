@@ -1,1007 +1,1357 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Jakov Kristović - Software Development Engineer</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Jakov Kristović - Software Engineer's personal website" />
-        <meta name="developer" content="Jakov Kristović">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-        <!-- FAV AND ICONS   -->        
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-        <link rel="manifest" href="assets/images/site.webmanifest">
-        
-        <!-- Google Font-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<head>
+  <title>Jakov Kristović — Software Development Engineer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jakov Kristović - Software Engineer's personal website">
+  <meta name="developer" content="Jakov Kristović">
 
-        <!-- Open Layers -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" type="text/css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css">
-        <!-- Animate CSS-->
-        <link rel="stylesheet" href="assets/plugins/css/animate.css">
-        <!-- Owl Carousel CSS-->
-        <link rel="stylesheet" href="assets/plugins/css/owl.css">
-        <!-- Fancybox-->
-        <link rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
-        <!-- Custom CSS-->
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        
-        <!-- Colors -->
-        <link rel="alternate stylesheet" href="assets/css/colors/blue.css" title="blue">
-        <link rel="stylesheet" href="assets/css/colors/defauld.css" title="defauld">
-        <link rel="alternate stylesheet" href="assets/css/colors/green.css" title="green">
-        <link rel="alternate stylesheet" href="assets/css/colors/blue-munsell.css" title="blue-munsell">
-        <link rel="alternate stylesheet" href="assets/css/colors/orange.css" title="orange">
-        <link rel="alternate stylesheet" href="assets/css/colors/purple.css" title="purple">
-        <link rel="alternate stylesheet" href="assets/css/colors/slate.css" title="slate">
-        <link rel="alternate stylesheet" href="assets/css/colors/yellow.css" title="yellow">
-    </head>
-    <body class="dark-vertion black-bg">
-        <!-- Start Loader -->
-        <div class="section-loader">
-            <div class="loader">
-                <div></div>
-                <div></div> 
-            </div>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/site.webmanifest">
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css">
+
+  <style>
+    :root {
+      --bg:            #0a0a0a;
+      --bg-2:          #111111;
+      --bg-3:          #181818;
+      --border:        #222222;
+      --border-2:      #2e2e2e;
+      --text:          #e0e0e0;
+      --text-muted:    #777777;
+      --text-dim:      #404040;
+      --accent:        #d4622a;
+      --accent-bright: #e8773a;
+      --accent-dim:    #6e2f12;
+      --mono:          'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+      --pad:           80px 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--accent-bright); }
+    img { max-width: 100%; height: auto; display: block; }
+    address { font-style: normal; }
+    ul { list-style: none; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
+
+    /* ─── LAYOUT ─────────────────────────────── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── NAV ────────────────────────────────── */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      background: rgba(10,10,10,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-logo img { width: 28px; height: 28px; border-radius: 6px; }
+    .nav-logo .prompt { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-2);
+      color: var(--text-muted);
+      border-radius: 6px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    /* ─── SECTIONS ───────────────────────────── */
+    section { padding: var(--pad); border-bottom: 1px solid var(--border); }
+    footer  { padding: var(--pad); }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-label::before { content: '// '; color: var(--text-dim); }
+
+    .section-title {
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 48px;
+    }
+
+    /* ─── BUTTONS ────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 7px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-bright); color: #fff; border-color: var(--accent-bright); }
+
+    .btn-outline { background: transparent; color: var(--text-muted); border-color: var(--border-2); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── TAGS ───────────────────────────────── */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
+
+    .tag {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all .2s;
+    }
+    .tag:hover { border-color: var(--accent-dim); color: var(--text); }
+
+    /* ─── SOCIAL BUTTONS ─────────────────────── */
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border-2);
+      border-radius: 7px;
+      color: var(--text-muted);
+      font-size: 13px;
+      transition: all .2s;
+    }
+    .social-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── HOME ───────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .hero-greeting {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-greeting .prompt-char { color: var(--accent); font-weight: 700; }
+    .hero-greeting .cmd { color: var(--text-dim); }
+
+    .hero-name {
+      font-size: clamp(36px, 5.5vw, 58px);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 12px;
+      letter-spacing: -.01em;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-bottom: 32px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .hero-meta li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta .meta-icon { color: var(--accent); width: 14px; text-align: center; flex-shrink: 0; }
+
+    .hero-socials { display: flex; gap: 10px; }
+
+    .hero-img-wrap { position: relative; }
+
+    .hero-img-wrap img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      filter: grayscale(15%);
+    }
+
+    .hero-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 55%);
+      pointer-events: none;
+      opacity: .4;
+    }
+
+    /* ─── ABOUT ──────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-img-wrap img {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .about-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .about-text a { font-weight: 600; }
+
+    /* ─── SERVICES ───────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: border-color .2s;
+    }
+    .service-card:hover { border-color: var(--accent-dim); }
+
+    .service-icon { font-size: 20px; margin-bottom: 16px; }
+
+    .service-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
+
+    /* ─── SKILLS ─────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+
+    .skills-heading {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      letter-spacing: .05em;
+    }
+
+    .skill-row { margin-bottom: 18px; }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+      font-size: 13px;
+    }
+
+    .skill-name { color: var(--text); font-weight: 500; }
+    .skill-pct  { color: var(--text-muted); }
+
+    .skill-bar {
+      height: 3px;
+      background: var(--bg-3);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      width: 0;
+      transition: width 1s cubic-bezier(.4,0,.2,1);
+    }
+
+    .pro-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .pro-skill {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .pro-skill-pct {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .pro-skill-name { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    /* ─── EXPERIENCE ─────────────────────────── */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+
+    .exp-heading {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      letter-spacing: .05em;
+    }
+
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      padding-left: 22px;
+      padding-bottom: 32px;
+      position: relative;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 7px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+    }
+
+    .timeline-year {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: .03em;
+    }
+
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .timeline-title a { color: var(--text); }
+    .timeline-title a:hover { color: var(--accent); }
+
+    .timeline-roles { margin-bottom: 8px; }
+
+    .timeline-roles li {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 2px 0;
+      display: flex;
+      gap: 8px;
+    }
+    .timeline-roles .role-date { color: var(--text-dim); flex-shrink: 0; }
+
+    .timeline-resp li {
+      font-size: 13px;
+      color: var(--text-muted);
+      padding: 2px 0;
+      display: flex;
+      gap: 8px;
+    }
+    .timeline-resp li::before { content: '→'; color: var(--text-dim); flex-shrink: 0; }
+
+    .timeline-desc { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
+
+    /* ─── PORTFOLIO ──────────────────────────── */
+    .portfolio-filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 5px 13px;
+      border-radius: 6px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-2);
+      color: var(--text-muted);
+      transition: all .2s;
+    }
+    .filter-btn.active, .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .portfolio-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      background: var(--bg-2);
+      transition: border-color .2s;
+    }
+    .portfolio-card:hover { border-color: var(--border-2); }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .portfolio-card:hover img { transform: scale(1.05); }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,.93) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+
+    .portfolio-overlay h5 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .portfolio-overlay span { font-size: 11px; color: var(--accent); }
+
+    .view-more { text-align: center; margin-top: 36px; }
+
+    /* ─── PORTFOLIO MODALS ───────────────────── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.88);
+      z-index: 500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal-content {
+      background: var(--bg-2);
+      border: 1px solid var(--border-2);
+      border-radius: 12px;
+      max-width: 880px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-close {
+      position: sticky;
+      top: 12px;
+      float: right;
+      margin: 12px 12px 0 0;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 14px;
+      z-index: 10;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-close:hover { border-color: var(--accent); color: var(--accent); }
+
+    .modal-body {
+      clear: both;
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+    }
+
+    .modal-info {
+      padding: 32px;
+      border-right: 1px solid var(--border);
+    }
+
+    .modal-info h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .modal-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+
+    .modal-info ol {
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+
+    .modal-info a.j-highlight { color: var(--accent); font-weight: 600; }
+
+    .modal-images {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .modal-images img { border-radius: 8px; border: 1px solid var(--border); }
+    .modal-images figcaption { font-size: 11px; color: var(--text-dim); margin-top: -6px; }
+
+    /* ─── BLOG ───────────────────────────────── */
+    .blog-placeholder {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 56px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .blink {
+      display: inline-block;
+      width: 9px;
+      height: 15px;
+      background: var(--accent);
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ─── CONTACT ────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .contact-cards { display: flex; flex-direction: column; gap: 12px; }
+
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .contact-card-icon { color: var(--accent); width: 16px; flex-shrink: 0; margin-top: 2px; font-size: 14px; }
+
+    .contact-card h4 {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 4px;
+    }
+    .contact-card p, .contact-card a, .contact-card address { font-size: 13px; color: var(--text); }
+
+    .map-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 180px;
+      margin-top: 12px;
+    }
+    #map { width: 100%; height: 100%; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 11px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+
+    input, textarea {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text);
+      width: 100%;
+      transition: border-color .2s;
+      outline: none;
+    }
+    input:focus, textarea:focus { border-color: var(--accent); }
+    input::placeholder, textarea::placeholder { color: var(--text-dim); }
+    textarea { resize: vertical; min-height: 130px; }
+
+    /* ─── FOOTER BAR ─────────────────────────── */
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-copy { font-size: 12px; color: var(--text-dim); }
+    .footer-socials { display: flex; gap: 8px; }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .skills-grid, .exp-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-img-wrap { max-width: 300px; margin: 0 auto; }
+      .modal-body { grid-template-columns: 1fr; }
+      .modal-info { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    @media (max-width: 600px) {
+      :root { --pad: 56px 0; }
+      .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; position: absolute; top: 55px; left: 0; right: 0; background: var(--bg-2); border-bottom: 1px solid var(--border); flex-direction: column; padding: 16px 24px; gap: 14px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; align-items: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────── -->
+  <nav id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-logo" href="#home">
+          <img src="assets/images/apple-touch-icon.png" alt="logo">
+          <span><span class="prompt">~/</span>jakov</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#skills">skills</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#portfolio">portfolio</a></li>
+          <li><a href="#blog">blog</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HOME ─────────────────────────────── -->
+  <section id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="hero-greeting">
+            <span class="prompt-char">$</span>
+            <span class="cmd">echo "Hello, World!"</span>
+          </p>
+          <h1 class="hero-name">Jakov<br>Kristović</h1>
+          <p class="hero-subtitle">Software Development Engineer</p>
+          <ul class="hero-meta">
+            <li><span class="meta-icon"><i class="fa-solid fa-briefcase"></i></span><a href="https://www.autodesk.com/">Autodesk</a></li>
+            <li><span class="meta-icon"><i class="fa-solid fa-graduation-cap"></i></span>Master's in Informatics&thinsp;@&thinsp;<a href="https://www.foi.unizg.hr/">FOI</a></li>
+            <li><span class="meta-icon"><i class="fa-solid fa-envelope"></i></span><a href="mailto:kristovic.jakov@gmail.com">kristovic.jakov@gmail.com</a></li>
+            <li><span class="meta-icon"><i class="fa-solid fa-location-dot"></i></span>Dubrovnik, Croatia</li>
+          </ul>
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/jakovkristovic/" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/TheJakov" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.facebook.com/jakov.kristovic" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jakovkristovic/" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
         </div>
-        <!-- End Loader -->
-        
-        <!--
-        ===================
-           NAVIGATION
-        ===================
-        -->
-        <header class="black-bg mh-header mh-fixed-nav nav-scroll mh-xs-mobile-nav wow fadeInUp" id="mh-header">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <nav class="navbar navbar-expand-lg mh-nav nav-btn">
-                        <a class="navbar-brand ml-2" href="#">
-                            <img src="assets/images/apple-touch-icon.png" style="max-width: 69px; max-height: 69px;" alt="logo" class="img-fluid">
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon icon"></span>
-                        </button>
-                    
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-0 ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#mh-home">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#mh-about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="#mh-skills">Skills</a>
-                                </li>                                
-                                <li class="nav-item">
-                                   <a class="nav-link" href="#mh-experience">Experiences</a>
-                                </li>                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#mh-portfolio">Portfolio</a>
-                                </li>                               
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#mh-blog">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="#mh-contact">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+        <div class="hero-img-wrap">
+          <img src="assets/images/jakov_alt.jpg" alt="Jakov Kristović">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">about</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="assets/images/se2.webp" alt="software engineer">
+        </div>
+        <div>
+          <p class="about-text">Hey, I'm Jakov — a Senior Software Development Engineer at <a href="https://www.autodesk.com/">Autodesk</a>, based in Dubrovnik.
+            These days I live mostly in <a href="https://react.dev/">React</a>, <a href="https://nodejs.org/">Node.js</a>, and JavaScript — building scalable,
+            product-grade features that ship to millions of users worldwide.
+            My roots are in <a href="https://dotnet.microsoft.com/">.NET and C#</a>, which still shape how I think about architecture and clean backend design.
+            I care about writing code that's readable, fast, and built to last.</p>
+          <div class="tag-list">
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">.NET Core</span>
+            <span class="tag">.NET Framework</span>
+            <span class="tag">ASP .NET</span>
+            <span class="tag">C#</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">html</span>
+            <span class="tag">css</span>
+            <span class="tag">PWAs</span>
+            <span class="tag">artificial intelligence</span>
+          </div>
+          <a href="https://www.linkedin.com/in/jakovkristovic/" class="btn btn-primary">
+            Check me out on LinkedIn&nbsp;<i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ──────────────────────────── -->
+  <section id="services">
+    <div class="container">
+      <p class="section-label">services</p>
+      <h2 class="section-title">What I Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon" style="color:var(--accent)"><i class="fa-brands fa-react"></i></div>
+          <h3>Frontend Engineering</h3>
+          <p>Building performant, scalable UIs in React — from component architecture and state management to seamless UX. I focus on code that's maintainable at scale, not just code that works today.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="color:#888"><i class="fa-brands fa-node-js"></i></div>
+          <h3>Backend & APIs</h3>
+          <p>Designing and shipping reliable Node.js services and REST APIs — with a sharp eye on performance, security, and clean contracts between systems. Backed by years of .NET architecture thinking.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="color:#6bc5ea"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>Software at Scale</h3>
+          <p>At Autodesk, I work on software used by millions of engineers and designers worldwide. That means thinking beyond features — into reliability, observability, and long-term system health.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ────────────────────────────── -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label">skills</p>
+      <div class="skills-grid">
+        <div>
+          <p class="skills-heading">// Technical Skills</p>
+          <div class="skill-row">
+            <div class="skill-info"><span class="skill-name">C#</span><span class="skill-pct">94%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="94%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-info"><span class="skill-name">SQL Server</span><span class="skill-pct">91%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="91%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-info"><span class="skill-name">Node.js</span><span class="skill-pct">89%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="89%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-info"><span class="skill-name">React</span><span class="skill-pct">87%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="87%"></div></div>
+          </div>
+        </div>
+        <div>
+          <p class="skills-heading">// Professional Skills</p>
+          <div class="pro-skills-grid">
+            <div class="pro-skill"><div class="pro-skill-pct">100%</div><div class="pro-skill-name">Communication</div></div>
+            <div class="pro-skill"><div class="pro-skill-pct">95%</div><div class="pro-skill-name">Team Work</div></div>
+            <div class="pro-skill"><div class="pro-skill-pct">90%</div><div class="pro-skill-name">Project Management</div></div>
+            <div class="pro-skill"><div class="pro-skill-pct">90%</div><div class="pro-skill-name">Creativity</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ────────────────────────── -->
+  <section id="experience">
+    <div class="container">
+      <p class="section-label">experience</p>
+      <div class="exp-grid">
+        <div>
+          <p class="exp-heading">// Work Experience</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">Oct 2025 — present</div>
+              <h4 class="timeline-title">Senior Software Development Engineer at <a href="https://www.autodesk.com/">Autodesk</a></h4>
+              <ul class="timeline-resp">
+                <li>React.js, Node.js, JavaScript, GraphQL, AWS</li>
+              </ul>
             </div>
-        </header>
-        
-        <!--
-        ===================
-            HOME 
-        ===================
-        -->
-        <section class="mh-home" id="mh-home">
-            <div class="home-ovimg">
-                <div class="container">
-                    <div class="row xs-column-reverse section-separator vertical-middle-content home-padding">
-                        <div class="col-sm-6">
-                            <div class="mh-header-info">
-                                <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                                    <span>Hello I'm</span>
-                                </div>
-                                
-                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Jakov Kristović</h2>
-                                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Software Development Engineer</h4>
-                                
-                                <ul>
-                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s"><i class="fa fa-briefcase"></i><a href="https://www.autodesk.com/">Autodesk</a></li>
-                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-graduation-cap"></i>Master's degree in Informatics @ <a href="https://www.foi.unizg.hr/">FOI</a></li>
-                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-envelope"></i><a href="mailto:">kristovic.jakov@gmail.com</a></li>
-                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-map-marker"></i><address>Dubrovnik, Croatia</address></li>
-                                </ul>
-                                
-                                <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                    <li><a href="https://www.linkedin.com/in/jakovkristovic/"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="https://github.com/TheJakov"><i class="fa fa-github"></i></a></li>
-                                    <li><a href="https://www.facebook.com/jakov.kristovic"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="https://www.instagram.com/jakovkristovic/"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                <div class="img-border">
-                                    <img src="assets/images/jakov_alt.jpg" alt=""  class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline-item">
+              <div class="timeline-year">Oct 2022 — Oct 2025</div>
+              <h4 class="timeline-title">Software Development Engineer at <a href="https://www.autodesk.com/">Autodesk</a></h4>
+              <ul class="timeline-resp">
+                <li>C#, .NET Framework, .NET Core, Node.js, React.js</li>
+              </ul>
             </div>
-        </section>   
-        
-        <!--
-        ==================
-            ABOUT
-        =================
-        -->
-        <section class="mh-about" id="mh-about">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                            <img src="assets/images/se2.webp" alt="software engineer" class="img-fluid" style="border-radius: 15px;">
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="mh-about-inner">
-                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
-                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Hello, I’m a Jakov, experienced software engineer based in Dubrovnik. 
-                            Skilled in Databases, C#, developing Web & Desktop applications, often using <a href="https://dotnet.microsoft.com/" class="font-weight-bold j-highlight">.NET technologies</a>.
-                            Lately, I am developing new mobile apps in form of PWAs using React.</p>
-                            <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                <ul>
-                                    <li><span>C#</span></li>
-                                    <li><span>html</span></li>
-                                    <li><span>css</span></li>
-                                    <li><span>JavaScript</span></li>
-                                    <li><span>.NET Framework</span></li>
-                                    <li><span>.NET Core</span></li>
-                                    <li><span>ASP .NET</span></li>
-                                    <li><span>React</span></li>
-                                    <li><span>PWAs</span></li>
-                                    <li><span>Flutter</span></li>
-                                    <li><span>SQL Server</span></li>
-                                    <li><span>artificial intelligence</span></li>
-                                </ul>
-                            </div>
-                            <a href="https://www.linkedin.com/in/jakovkristovic/" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Check me out on LinkedIn<i class="fa fa-linkedin-square"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline-item">
+              <div class="timeline-year">Aug 2020 — Sep 2022</div>
+              <h4 class="timeline-title">Software Engineer at <a href="https://www.laus.hr/">Laus CC</a></h4>
+              <ul class="timeline-roles">
+                <li><span class="role-date">Apr 2022 – Sep 2022</span> .NET Engineer</li>
+                <li><span class="role-date">Oct 2021 – Apr 2022</span> .NET Full Stack Developer</li>
+                <li><span class="role-date">Aug 2020 – Oct 2021</span> Junior .NET Full Stack Developer</li>
+              </ul>
+              <ul class="timeline-resp">
+                <li>Software engineering &amp; development</li>
+                <li>Database engineering</li>
+                <li>Mentoring junior software developers</li>
+              </ul>
             </div>
-        </section>
-        
-        <!--
-        ===================
-           SERVICE
-        ===================
-        -->
-        <section class="mh-service">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                        <h3>What I do</h3>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <i class="fa fa-bullseye purple-color"></i>
-                            <h3>Software Engineering</h3>
-                            <p>
-                                Taking on the critical roles of turning business needs into technology 
-                                solutions - from defining system requirements and designing technical solutions, 
-                                to developing and testing various features that suit business needs. 
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <i class="fa fa-code iron-color"></i>
-                            <h3>Web Development</h3>
-                            <p>
-                                Building attractive and functional websites, which will give away professional and user-friendly 
-                                feel, always aiming to reflect a business that is trustworthy, relevant and client or consumer-centric.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                            <i class="fa fa-object-ungroup sky-color"></i>
-                            <h3>App Development</h3>
-                            <p>
-                                Developing modern mobile apps with eye-catching UI, by combining the best features of web and mobile apps,
-                                to create experiences that will allow us to manipulate the world in ways we previously only imagined.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline-item">
+              <div class="timeline-year">Feb 2020 — Jul 2020</div>
+              <h4 class="timeline-title">Software Engineer Intern at <a href="https://phobs.net/">PHOBS</a></h4>
+              <ul class="timeline-resp">
+                <li>Web development</li>
+              </ul>
             </div>
-        </section>       
-        
-        <!--
-        ===================
-           SKILLS
-        ===================
-        -->
-        <section class="mh-skills" id="mh-skills">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="section-title text-center col-sm-12">
-                        <!--<h2>Skills</h2>-->
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="mh-skills-inner">
-                            <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                <h3>Technical Skills</h3>
-                                <div class="each-skills">
-                                    <div class="candidatos">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="nome">C#</div>
-                                                <div class="percentagem-num">94%</div>
-                                            </div>
-                                            <div class="progressBar">
-                                                <div class="percentagem" style="width: 93%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="candidatos">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="nome">SQL Server</div>
-                                                <div class="percentagem-num">91%</div>
-                                            </div>
-                                            <div class="progressBar">
-                                                <div class="percentagem" style="width: 91%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="candidatos">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="nome">JavaScript</div>
-                                                <div class="percentagem-num">85%</div>
-                                            </div>
-                                            <div class="progressBar">
-                                                <div class="percentagem" style="width: 85%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="candidatos">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="nome">React</div>
-                                                <div class="percentagem-num">80%</div>
-                                            </div>
-                                            <div class="progressBar">
-                                                <div class="percentagem" style="width: 80%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="candidatos">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="nome">Flutter</div>
-                                                <div class="percentagem-num">50%</div>
-                                            </div>
-                                            <div class="progressBar">
-                                                <div class="percentagem" style="width: 50%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>                                     
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <h3>Professional Skills</h3>
-                            <ul class="mh-professional-progress" >
-                                <li>
-                                    <div class="mh-progress mh-progress-circle" data-progress="90"></div>
-                                    <div class="pr-skill-name">Communication</div>
-                                </li>
-                                <li>
-                                    <div class="mh-progress mh-progress-circle" data-progress="95"></div> 
-                                    <div class="pr-skill-name">Team Work</div>
-                                </li>
-                                <li>
-                                    <div class="mh-progress mh-progress-circle" data-progress="70"></div>
-                                    <div class="pr-skill-name">Project Management</div>
-                                </li> 
-                                <li>
-                                    <div class="mh-progress mh-progress-circle" data-progress=" 80"></div>
-                                    <div class="pr-skill-name">Creativity</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div>
+          <p class="exp-heading">// Education</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2018 — 2020</div>
+              <h4 class="timeline-title">Master's degree in Informatics — <a href="https://www.foi.unizg.hr/">FOI</a></h4>
+              <p class="timeline-desc">Databases and Knowledge Bases — My master's thesis was on the topic of creating intelligent recommender systems using machine learning and artificial intelligence.</p>
             </div>
-        </section>
-        
-        <!--
-        ===================
-           EXPERIENCES
-        ===================
-        -->
-        <section class="mh-experince" id="mh-experience">
-            <div class="bolor-overlay">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="col-sm-12 col-md-6">
-                            <div class="mh-work">
-                                 <h3>Work Experience</h3>
-                                <div class="mh-experience-deatils">                                
-                                    
-                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                                        <h4>Software Development Engineer at <a href="https://www.autodesk.com/">Autodesk</a></h4>
-                                        <div class="mh-eduyear">Oct 2022 - present</div>
-                                        <span>Roles: </span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-calendar">&nbsp;Oct 2022 - present</i>Software Development Engineer</li>
-                                        </ul>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Software development in .NET</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                        <h4>Software Engineer at <a href="https://www.laus.hr/">Laus CC</a></h4>
-                                        <div class="mh-eduyear">Aug 2020 - Sep 2022</div>
-                                        <span>Roles: </span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-calendar">&nbsp;Apr 2022 - Sep 2022</i>.NET Engineer</li>
-                                            <li><i class="fa fa-calendar">&nbsp;Oct 2021 - Apr 2022</i>.NET Full Stack Developer</li>
-                                            <li><i class="fa fa-calendar">&nbsp;Aug 2020 - Oct 2021</i>Junior .NET Full Stack Developer</li>
-                                        </ul>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Software engineering & development</li>
-                                            <li><i class="fa fa-circle"></i>Database engineering</li>
-                                            <li><i class="fa fa-circle"></i>Mentoring junior software developers</li>
-                                        </ul>
-                                    </div>                                
-                                    
-                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">
-                                        <h4>Software Engineer Intern at <a href="https://phobs.net/">PHOBS</a></h4>
-                                        <div class="mh-eduyear">Feb 2020 - Jul 2020</div>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Web development</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="mh-education">
-                                 <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
-                                <div class="mh-education-deatils">
-                                    <!-- Education Institutes-->
-                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                        <h4>Master's degree in Informatics from <a href="https://www.foi.unizg.hr/">Faculty of Organization and Informatics</a></h4>
-                                        <div class="mh-eduyear">2018-2020</div>
-                                        <p>Databases and Knowledge Bases - My master's thesis was on the topic of creating intelligent recommender systems using machine learning and artificial intelligence.</p>
-                                    </div>                                
-                                    <!-- Education Institutes-->
-                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                        <h4>Bachelor's degree in Informational Systems from <a href="https://www.foi.unizg.hr/">Faculty of Organization and Informatics</a></h4>
-                                        <div class="mh-eduyear">2015-2018</div>
-                                        <p>Informational systems - At this point I was sharping my skills to become a software engineer and do what I love the most - develop cool things which will find their purposes in real life.</p>
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2015 — 2018</div>
+              <h4 class="timeline-title">Bachelor's degree in Informational Systems — <a href="https://www.foi.unizg.hr/">FOI</a></h4>
+              <p class="timeline-desc">Informational systems — At this point I was sharpening my skills to become a software engineer and do what I love the most — develop cool things which will find their purposes in real life.</p>
             </div>
-        </section>
-        
-        <!--
-        ===================
-           PORTFOLIO
-        ===================
-        -->
-        <section class="mh-portfolio" id="mh-portfolio">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                        <h3>Recent Portfolio</h3>
-                    </div>
-                    <div class="part col-sm-12">
-                        <div class="portfolio-nav col-sm-12" id="filter-button">
-                            <ul>
-                                <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"> <span>All Categories</span></li>
-                                <li data-filter=".machine-learning" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s"><span>Machine learning</span></li>
-                                <li data-filter=".gov-apps" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><span>Goverment</span></li>
-                                <li data-filter=".stem" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><span>STEM</span></li>
-                            </ul>
-                        </div>
-                        <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <div class="portfolioContainer row">
-                                
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 gov-apps">
-                                    <figure>
-                                        <img src="assets/images/portfolio/safe5_preview.png" alt="Carina VET preview">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-search"></i>
-                                            <h5 class="title">VET App</h5>
-                                            <span class="sub-title">Croatian Customs</span>
-                                            <a href="assets/images/portfolio/safe5_preview.png" data-fancybox data-src="#safe5"></a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 gov-apps">
-                                    <figure>
-                                        <img src="assets/images/portfolio/manualApp_preview.png" alt="manual_app">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-search"></i>
-                                            <h5 class="title">Web manual for customs inspection</h5>
-                                            <span class="sub-title">Croatian Customs</span>
-                                            <a href="assets/images/portfolio/manualApp_preview.png" data-fancybox data-src="#manualapp"></a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 machine-learning">
-                                    <figure>
-                                        <img src="assets/images/portfolio/car_recomm_system.jpg" alt="car_recomm_system">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-search"></i>
-                                            <h5 class="title">Car Recommendation System</h5>
-                                            <span class="sub-title">Recommender systems</span>
-                                            <a href="assets/images/portfolio/car_recomm_system.jpg" data-fancybox data-src="#carrecomm"></a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 machine-learning">
-                                    <figure>
-                                        <img src="assets/images/portfolio/video_game_recomm_logo.png" alt="video-games-recommender">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-search"></i>
-                                            <h5 class="title">Video Game Recommendation Engine</h5>
-                                            <span class="sub-title">Recommender systems</span>
-                                            <a href="assets/images/portfolio/video_game_recomm_logo.png" data-fancybox data-src="#vgre"></a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12">
-                                    <figure>
-                                        <img src="assets/images/portfolio/PassLock-logov4.png" alt="passlock">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-search"></i>
-                                            <h5 class="title">PassLock</h5>
-                                            <span class="sub-title">Password manager</span>
-                                            <a href="assets/images/portfolio/PassLock-logov4.png" data-fancybox data-src="#passlock"></a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 stem">
-                                    <figure>
-                                        <img src="assets/images/portfolio/stem.png" alt="mranger">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-search"></i>
-                                            <h5 class="title">mRanger</h5>
-                                            <span class="sub-title">STEM</span>
-                                            <a href="assets/images/portfolio/stem.png" data-fancybox data-src="#mranger"></a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12">
-                                    <figure>
-                                        <img src="assets/images/portfolio/newstracker.png" alt="newstracker">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-search"></i>
-                                            <h5 class="title">newsTracker</h5>
-                                            <span class="sub-title">Multi-agent news tracking system</span>
-                                            <a href="assets/images/portfolio/newstracker.png" data-fancybox data-src="#newsTracker"></a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div> <!-- End: .grid .project-gallery -->
-                        </div> <!-- End: .grid .project-gallery -->
-                    </div> <!-- End: .part -->
-                </div> <!-- End: .row -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a class="btn btn-xl btn-outline-dark" href="https://www.linkedin.com/in/jakovkristovic/">
-                            <i class="fa fa-code"></i>
-                            View all projects on LinkedIn!
-                        </a>
-                    </div>
-                </div>
+  <!-- ─── PORTFOLIO ─────────────────────────── -->
+  <section id="portfolio">
+    <div class="container">
+      <p class="section-label">portfolio</p>
+      <h2 class="section-title">Recent Portfolio</h2>
+
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="*">All</button>
+        <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+        <button class="filter-btn" data-filter="gov-apps">Government</button>
+        <button class="filter-btn" data-filter="stem">STEM</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card" data-category="gov-apps" data-modal="safe5">
+          <img src="assets/images/portfolio/safe5_preview.png" alt="VET App">
+          <div class="portfolio-overlay"><h5>VET App</h5><span>Croatian Customs</span></div>
+        </div>
+        <div class="portfolio-card" data-category="gov-apps" data-modal="manualapp">
+          <img src="assets/images/portfolio/manualApp_preview.png" alt="Web manual">
+          <div class="portfolio-overlay"><h5>Web manual for customs inspection</h5><span>Croatian Customs</span></div>
+        </div>
+        <div class="portfolio-card" data-category="machine-learning" data-modal="carrecomm">
+          <img src="assets/images/portfolio/car_recomm_system.jpg" alt="Car Recommendation System">
+          <div class="portfolio-overlay"><h5>Car Recommendation System</h5><span>Recommender Systems</span></div>
+        </div>
+        <div class="portfolio-card" data-category="machine-learning" data-modal="vgre">
+          <img src="assets/images/portfolio/video_game_recomm_logo.png" alt="Video Game Recommendation Engine">
+          <div class="portfolio-overlay"><h5>Video Game Recommendation Engine</h5><span>Recommender Systems</span></div>
+        </div>
+        <div class="portfolio-card" data-modal="passlock">
+          <img src="assets/images/portfolio/PassLock-logov4.png" alt="PassLock">
+          <div class="portfolio-overlay"><h5>PassLock</h5><span>Password Manager</span></div>
+        </div>
+        <div class="portfolio-card" data-category="stem" data-modal="mranger">
+          <img src="assets/images/portfolio/stem.png" alt="mRanger">
+          <div class="portfolio-overlay"><h5>mRanger</h5><span>STEM</span></div>
+        </div>
+        <div class="portfolio-card" data-modal="newsTracker">
+          <img src="assets/images/portfolio/newstracker.png" alt="newsTracker">
+          <div class="portfolio-overlay"><h5>newsTracker</h5><span>Multi-agent News Tracking</span></div>
+        </div>
+      </div>
+
+      <div class="view-more">
+        <a href="https://www.linkedin.com/in/jakovkristovic/" class="btn btn-outline">
+          <i class="fa-solid fa-code"></i>&nbsp; View all projects on LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal: newsTracker -->
+    <div class="modal-backdrop" id="modal-newsTracker">
+      <div class="modal-content">
+        <button class="modal-close" data-close>✕</button>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h2>NewsTracker</h2>
+            <p>Multi-agent news tracking system made in Python using SPADE platform.</p>
+            <div class="tag-list">
+              <span class="tag">python</span><span class="tag">agent</span><span class="tag">news</span>
+              <span class="tag">scraping</span><span class="tag">multiagent-systems</span><span class="tag">spade</span>
             </div>
+            <a href="https://github.com/TheJakov/newsTracker" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
+          </div>
+          <div class="modal-images">
+            <img src="assets/images/portfolio/newstracker.png" alt="newstracker">
+            <figcaption>System architecture</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- newsTracker -->
-            <div class="mh-portfolio-modal" id="newsTracker">
-                <div class="container">
-                    <div class="row mh-portfolio-modal-inner">
-                        <div class="col-sm-5">
-                            <h2>NewsTracker</h2>
-                            <p>Multi-agent news tracking system made in Python using SPADE platform.</p>            
-                            <div class="mh-about-tag">
-                                <ul>
-                                    <li><span>python</span></li>
-                                    <li><span>agent</span></li>
-                                    <li><span>news</span></li>
-                                    <li><span>scraping</span></li>
-                                    <li><span>mulitagent-systems</span></li>
-                                    <li><span>spade</span></li>
-                                </ul>
-                            </div>
-                            
-                            <a href="https://github.com/TheJakov/newsTracker" class="btn btn-outline-secondary">
-                                <i class="fa fa-github"></i>&nbsp;Github
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="mh-portfolio-modal-img">
-                                <img src="assets/images/portfolio/newstracker.png" alt="newstracker" class="img-fluid">
-                                <p>System architecture</p>       
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal: mRanger -->
+    <div class="modal-backdrop" id="modal-mranger">
+      <div class="modal-content">
+        <button class="modal-close" data-close>✕</button>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h2>mRanger</h2>
+            <p>Developed and designed an Android based app where a mobile phone communicates with m:Bot via Bluetooth. My role was as a C++ (Visual Studio/Arduino), Prolog (SWI-Prolog), PHP and Android Java developer (Android Studio). SCRUM agile methodology was used.</p>
+            <p>Purpose of project was making learning materials for high school students of Croatia covering Android development fundamentals and logical programming concepts. The m:Bot Ranger device communicates with the Android app via Bluetooth, enabling remote control and temperature measurement. Prolog infers weather season and time-of-day context. Website available at mranger.foi.hr.</p>
+            <div class="tag-list">
+              <span class="tag">android</span><span class="tag">java</span><span class="tag">robotics</span>
+              <span class="tag">stem</span><span class="tag">php</span><span class="tag">sensor</span>
+              <span class="tag">bluetooth</span><span class="tag">swi-prolog</span><span class="tag">mysql</span>
             </div>
-            <!-- END newsTracker -->
+            <a href="https://github.com/TheJakov/mRanger" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
+          </div>
+          <div class="modal-images">
+            <img src="assets/images/portfolio/mranger-syst-arch.png" alt="mRanger system architecture">
+            <figcaption>Simple overview of data flows</figcaption>
+            <img src="assets/images/portfolio/mranger-disp-1.png" alt="mRanger UI">
+            <figcaption>UI overview</figcaption>
+            <img src="assets/images/portfolio/mranger-disp-2.png" alt="mRanger temperature">
+            <figcaption>Measuring temperature</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- mRanger -->
-            <div class="mh-portfolio-modal" id="mranger">
-                <div class="container">
-                    <div class="row mh-portfolio-modal-inner">
-                        <div class="col-sm-5">
-                            <h2>mRanger</h2>
-                            <p>Developed and designed an Android based app where mobile phone communicates with m:Bot via Bluetooth. My role was as an C++ (Visual Studio/Arduino), 
-                                Prolog (SWI-Prolog), PHP and Android Java developer (Android Studio). For application development, SCRUM agile methodology was used.
-                            </p>
-                            <p>Purpose of project was making some learning materials for high school students of Croatia, with which they could learn more about first steps in 
-                                Android development and concepts of logical programming. The m: bot Ranger device communicates with the Android mobile application via Bluetooth. 
-                                The Android application allows remote control of the m:Bot Ranger device and calculation and display of the current temperature measured by the 
-                                device. The application also allows you to change the speed of the m:Bot Ranger device. Measured temperature was processed via Prolog to make some 
-                                inference about current weather season and temperature for a certain time of day. Website using Prolog in combination with PHP should be 
-                                still available at mranger.foi.hr
-                            </p>            
-                            <div class="mh-about-tag">
-                                <ul>
-                                    <li><span>android</span></li>
-                                    <li><span>java</span></li>
-                                    <li><span>robotics</span></li>
-                                    <li><span>stem</span></li>
-                                    <li><span>php</span></li>
-                                    <li><span>sensor</span></li>
-                                    <li><span>bluetooth</span></li>
-                                    <li><span>swi-prolog</span></li>
-                                    <li><span>mysql</span></li>
-                                </ul>
-                            </div>
-                            
-                            <a href="https://github.com/TheJakov/mRanger" class="btn btn-outline-secondary">
-                                <i class="fa fa-github"></i>&nbsp;Github
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="mh-portfolio-modal-img">
-                                <img src="assets/images/portfolio/mranger-syst-arch.png" alt="mranger-syst-arch" class="img-fluid">
-                                <p>Simple overview of data flows</p>
-                                <img src="assets/images/portfolio/mranger-disp-1.png" alt="mranger-disp-1" class="img-fluid">
-                                <p>UI overview</p>
-                                <img src="assets/images/portfolio/mranger-disp-2.png" alt="mranger-disp-2" class="img-fluid">
-                                <p>Measuring temperature</p>           
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal: PassLock -->
+    <div class="modal-backdrop" id="modal-passlock">
+      <div class="modal-content">
+        <button class="modal-close" data-close>✕</button>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h2>PassLock</h2>
+            <p>The application allows the user to enter and/or generate the desired password and save it in a hashed format.</p>
+            <p>The user has a record of his stored hash passwords and can easily copy and use the password to log in with his account to the services or social networks he uses.</p>
+            <p>The purpose of this application is to increase security on the Internet — encouraging the use of passwords that are difficult to crack using typical 'Dictionary Attack' or similar brute force methods.</p>
+            <div class="tag-list">
+              <span class="tag">C#</span><span class="tag">security</span><span class="tag">encryption</span>
+              <span class="tag">password-manager</span><span class="tag">desktop</span><span class="tag">sqlite</span>
             </div>
-            <!-- END mRanger -->
+            <a href="https://github.com/TheJakov/PassLock" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
+          </div>
+          <div class="modal-images">
+            <img src="assets/images/portfolio/passlock-disp1.png" alt="PassLock UI">
+            <figcaption>UI overview</figcaption>
+            <img src="assets/images/portfolio/passlock-disp2.PNG" alt="PassLock UI 2">
+            <figcaption>UI overview #2</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- PassLock -->
-            <div class="mh-portfolio-modal" id="passlock">
-                <div class="container">
-                    <div class="row mh-portfolio-modal-inner">
-                        <div class="col-sm-5">
-                            <h2>PassLock</h2>
-                            <p>The application allows the user to enter and/or generate the desired password and save it in a hashed format.</p>
-                            
-                            <p>The user has a record of his stored hash passwords in the application and can easily copy and use the password to
-                                 log in with his account to the services or social networks he uses.</p>
-
-                            <p>The purpose of this application is to increase security on the Internet, ie encourage the use of passwords that 
-                                are difficult to crack using some typical 'Dictionary Attack' or similar brute force methods.
-                            </p>            
-                            <div class="mh-about-tag">
-                                <ul>
-                                    <li><span>C#</span></li>
-                                    <li><span>security</span></li>
-                                    <li><span>encryption</span></li>
-                                    <li><span>password-manager</span></li>
-                                    <li><span>desktop</span></li>
-                                    <li><span>sqlite</span></li>
-                                </ul>
-                            </div>
-                            
-                            <a href="https://github.com/TheJakov/PassLock" class="btn btn-outline-secondary">
-                                <i class="fa fa-github"></i>&nbsp;Github
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="mh-portfolio-modal-img">
-                                <img src="assets/images/portfolio/passlock-disp1.png" alt="passlock-disp1" class="img-fluid">
-                                <p>UI overview</p>
-                                <img src="assets/images/portfolio/passlock-disp2.PNG" alt="passlock-disp2" class="img-fluid">
-                                <p>UI overview #2</p>        
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal: Video Game Recommendation Engine -->
+    <div class="modal-backdrop" id="modal-vgre">
+      <div class="modal-content">
+        <button class="modal-close" data-close>✕</button>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h2>Video Game Recommendation Engine</h2>
+            <p>Intelligent system (application) for user profiling and proposing the most suitable video games. Developed using .NET technologies and ML .NET (an open source and cross-platform machine learning framework).</p>
+            <div class="tag-list">
+              <span class="tag">C#</span><span class="tag">gaming</span><span class="tag">recommender-systems</span>
+              <span class="tag">intelligent-systems</span><span class="tag">desktop</span>
+              <span class="tag">machine-learning</span><span class="tag">ML.NET</span>
             </div>
-            <!-- END PassLock -->
+            <a href="https://github.com/TheJakov/VideoGameRecommendationEngineAI" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
+          </div>
+          <div class="modal-images">
+            <img src="assets/images/portfolio/vgre_1.png" alt="VGRE home screen">
+            <figcaption>Home screen</figcaption>
+            <img src="assets/images/portfolio/vgre_2.png" alt="VGRE profiling">
+            <figcaption>Example of a question in user profiling</figcaption>
+            <img src="assets/images/portfolio/vgre_3.png" alt="VGRE profiling 2">
+            <figcaption>Example of a question in user profiling #2</figcaption>
+            <img src="assets/images/portfolio/vgre_4.png" alt="VGRE profiling 3">
+            <figcaption>Example of a question in user profiling #3</figcaption>
+            <img src="assets/images/portfolio/vgre_5.png" alt="VGRE results">
+            <figcaption>Result — end screen (two profiling algorithms)</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- Video Game Recommendation Engine -->
-            <div class="mh-portfolio-modal" id="vgre">
-                <div class="container">
-                    <div class="row mh-portfolio-modal-inner">
-                        <div class="col-sm-5">
-                            <h2>Video Game Recommendation Engine</h2>
-                            <p>Intelligent system (application) for user profiling and proposing the most suitable video games. 
-                                Developed using .NET technologies and ML .NET (an open source and cross-platform machine learning framework).</p>
-                                
-                            <div class="mh-about-tag">
-                                <ul>
-                                    <li><span>C#</span></li>
-                                    <li><span>gaming</span></li>
-                                    <li><span>recommender-systems</span></li>
-                                    <li><span>intelligent-systems</span></li>
-                                    <li><span>desktop</span></li>
-                                    <li><span>machine-learning</span></li>
-                                    <li><span>ML.NET</span></li>
-                                </ul>
-                            </div>
-                            
-                            <a href="https://github.com/TheJakov/VideoGameRecommendationEngineAI" class="btn btn-outline-secondary">
-                                <i class="fa fa-github"></i>&nbsp;Github
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="mh-portfolio-modal-img">
-                                <img src="assets/images/portfolio/vgre_1.png" alt="video-games-recommender-preview" class="img-fluid">
-                                <p>Home screen</p>
-                                <img src="assets/images/portfolio/vgre_2.png" alt="video-games-recommender-profiling" class="img-fluid">
-                                <p>Example of a question in user profiling</p>
-                                <img src="assets/images/portfolio/vgre_3.png" alt="video-games-recommender-profiling" class="img-fluid">
-                                <p>Example of a question in user profiling #2</p>
-                                <img src="assets/images/portfolio/vgre_4.png" alt="video-games-recommender-profiling" class="img-fluid">
-                                <p>Example of a question in user profiling #3</p>
-                                <img src="assets/images/portfolio/vgre_5.png" alt="video-games-recommender-results" class="img-fluid">
-                                <p>Result - end screen (two profiling algorithms)</p>      
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal: Car Recommendation System -->
+    <div class="modal-backdrop" id="modal-carrecomm">
+      <div class="modal-content">
+        <button class="modal-close" data-close>✕</button>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h2>Car Recommendation System</h2>
+            <p>This application was developed as part of my graduate thesis, in the domain of recommender systems. The application performs user profiling and, based on his preferences, suggests top car recommendations that might suit him.</p>
+            <p>Application has two components that generate recommendations:</p>
+            <ol>
+              <li>custom made scoring algorithm and</li>
+              <li>ML model created via ML .NET machine learning framework.</li>
+            </ol>
+            <p>You can even check out the <a href="https://www.youtube.com/watch?v=RdYZqLjNA_o" class="j-highlight">video preview</a>.</p>
+            <div class="tag-list">
+              <span class="tag">C#</span><span class="tag">cars</span><span class="tag">recommender-systems</span>
+              <span class="tag">intelligent-systems</span><span class="tag">desktop</span>
+              <span class="tag">machine-learning</span><span class="tag">ML.NET</span>
             </div>
-            <!-- END Video Game Recommendation Engine -->
+            <a href="https://github.com/TheJakov/CarRecommendationSystem" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
+          </div>
+          <div class="modal-images">
+            <img src="assets/images/portfolio/crs_1.png" alt="Car recommender home">
+            <figcaption>Home screen</figcaption>
+            <img src="assets/images/portfolio/crs_2.png" alt="Car recommender profiling">
+            <figcaption>Example of a question in user profiling</figcaption>
+            <img src="assets/images/portfolio/crs_3.png" alt="Car recommender profiling 2">
+            <figcaption>Example of a question in user profiling #2</figcaption>
+            <img src="assets/images/portfolio/crs_4.png" alt="Car recommender profiling 3">
+            <figcaption>Example of a question in user profiling #3</figcaption>
+            <img src="assets/images/portfolio/crs_results.png" alt="Car recommender results">
+            <figcaption>Result — end screen (two profiling algorithms)</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- Car Recommendation System -->
-            <div class="mh-portfolio-modal" id="carrecomm">
-                <div class="container">
-                    <div class="row mh-portfolio-modal-inner">
-                        <div class="col-sm-5">
-                            <h2>Car Recommendation System</h2>
-                            <p>This application was developed as part of my graduate thesis, which was in domain of recommender systems. The application performs
-                                 user profiling and, based on his preferences, suggests to the user top car recommendations that might suit him.</p>
-
-                            <p>Application has two components that generate recommendations:</p>
-                            <ol>
-                                <li>custom made scoring algorithm and</li>
-                                <li>ML model crated via ML .NET machine learning framework.</li>
-                            </ol>
-
-                            <p>You can even check out <a href="https://www.youtube.com/watch?v=RdYZqLjNA_o" class="font-weight-bold j-highlight">video preview</a>.</p>
-                                
-                            <div class="mh-about-tag">
-                                <ul>
-                                    <li><span>C#</span></li>
-                                    <li><span>cars</span></li>
-                                    <li><span>recommender-systems</span></li>
-                                    <li><span>intelligent-systems</span></li>
-                                    <li><span>desktop</span></li>
-                                    <li><span>machine-learning</span></li>
-                                    <li><span>ML.NET</span></li>
-                                </ul>
-                            </div>
-                            
-                            <a href="https://github.com/TheJakov/CarRecommendationSystem" class="btn btn-outline-secondary">
-                                <i class="fa fa-github"></i>&nbsp;Github
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="mh-portfolio-modal-img">
-                                <img src="assets/images/portfolio/crs_1.png" alt="car-recommender-preview" class="img-fluid">
-                                <p>Home screen</p>
-                                <img src="assets/images/portfolio/crs_2.png " alt="car-recommender-profiling" class="img-fluid">
-                                <p>Example of a question in user profiling</p>
-                                <img src="assets/images/portfolio/crs_3.png" alt="car-recommender-profiling" class="img-fluid">
-                                <p>Example of a question in user profiling #2</p>
-                                <img src="assets/images/portfolio/crs_4.png" alt="car-recommender-profiling" class="img-fluid">
-                                <p>Example of a question in user profiling #3</p>
-                                <img src="assets/images/portfolio/crs_results.png" alt="car-recommender-results" class="img-fluid">
-                                <p>Result - end screen (two profiling algorithms)</p>      
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal: Web manual for customs inspection -->
+    <div class="modal-backdrop" id="modal-manualapp">
+      <div class="modal-content">
+        <button class="modal-close" data-close>✕</button>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h2>Web manual for customs inspection</h2>
+            <p>Development of digital educational materials in form of a manual for additional staff training, in cooperation with Croatian Customs office.</p>
+            <p>The purpose of the materials produced is to improve the knowledge and awareness of the trainees, in order to improve the performance of their daily work and give them a broader picture of the skills and current trends of smugglers.</p>
+            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration. Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
+            <p>Even though government departments are very sluggish today, at the end of the day they were ACCEPTED as new customs' projects — one went in the process of applying for EU funds, while this one was desired for test use as early as the next month.</p>
+            <p>More specific details regarding the project are not given here due to data confidentiality.</p>
+            <div class="tag-list">
+              <span class="tag">ASP.NET MVC</span><span class="tag">vehicles</span><span class="tag">eLearning</span>
+              <span class="tag">inspection</span><span class="tag">customs</span><span class="tag">EU</span><span class="tag">government</span>
             </div>
-            <!-- END Car Recommendation System -->
+          </div>
+          <div class="modal-images">
+            <img src="assets/images/portfolio/manualApp_preview.png" alt="Manual App preview">
+            <figcaption>Part of interactive app screen</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- Manual app -->
-            <div class="mh-portfolio-modal" id="manualapp">
-                <div class="container">
-                    <div class="row mh-portfolio-modal-inner">
-                        <div class="col-sm-5">
-                            <h2>Web manual for customs inspection</h2>
-                            <p>Development of digital educational materials in form of manual for additional staff training in cooperation with Croatian Customs office.</p>
-
-                            <p>The purpose of the materials produced is to improve the knowledge and awareness of the trainees, in order to improve the performance of 
-                                their daily work and give them a broader picture of the skills and current trends of smugglers.</p>
-
-                            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration.
-                                Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
-                            
-                            <p>Even though government departments are very sluggish today and have a hard time deciding and generally expressing a wish for big changes, 
-                                at the end of the day, they were ACCEPTED as new customs' projects. One project already went in the process of applying for EU funds, 
-                                while this one was desired to put it into test use as early as next month.</p>
-
-                            <p>More specific details regarding the project are not given here due to the data confidentiality.</p>
-                                
-                            <div class="mh-about-tag">
-                                <ul>
-                                    <li><span>ASP.NET MVC</span></li>
-                                    <li><span>vehicles</span></li>
-                                    <li><span>eLearning</span></li>
-                                    <li><span>inspection</span></li>
-                                    <li><span>customs</span></li>
-                                    <li><span>EU</span></li>
-                                    <li><span>goverment</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="mh-portfolio-modal-img">
-                                <img src="assets/images/portfolio/manualApp_preview.png" alt="manualApp_preview" class="img-fluid">
-                                <p>Part of interactive app screen</p>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal: VET App (SAFE5) -->
+    <div class="modal-backdrop" id="modal-safe5">
+      <div class="modal-content">
+        <button class="modal-close" data-close>✕</button>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h2>VET App</h2>
+            <p>The very purpose of this application is to help Croatian Customs officers in the inspection of pets, which may consist of several different steps with multiple legislative regulations, and is just one of the many tasks that staff must perform on a daily basis.</p>
+            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration. Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
+            <p>Even though government departments are very sluggish today, at the end of the day they were ACCEPTED as new customs' projects — this project already went in the process of applying for EU funds.</p>
+            <p>More specific details regarding the project are not given here due to data confidentiality.</p>
+            <div class="tag-list">
+              <span class="tag">web</span><span class="tag">mobile</span><span class="tag">customs</span>
+              <span class="tag">EU</span><span class="tag">government</span><span class="tag">pets</span><span class="tag">prototype</span>
             </div>
-            <!-- END Manual app -->
+          </div>
+          <div class="modal-images">
+            <img src="assets/images/portfolio/safe5_preview.png" alt="VET App preview">
+            <figcaption>Prototype preview</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <!-- SAFE5 app -->
-            <div class="mh-portfolio-modal" id="safe5">
-                <div class="container">
-                    <div class="row mh-portfolio-modal-inner">
-                        <div class="col-sm-5">
-                            <h2>VET app</h2>
-                            <p>The very purpose of this application is to help Croatian Customs officers in the inspection of pets, which may consist 
-                                of several different steps with multiple legislative regulations, and is just one of the many tasks that staff must perform on a daily basis.</p>
+  <!-- ─── BLOG ──────────────────────────────── -->
+  <section id="blog">
+    <div class="container">
+      <p class="section-label">blog</p>
+      <h2 class="section-title">Featured Posts</h2>
+      <div class="blog-placeholder">
+        <p>Blog content is coming soon<span class="blink"></span></p>
+      </div>
+    </div>
+  </section>
 
-                            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration.
-                                Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
-                            
-                            <p>Even though government departments are very sluggish today and have a hard time deciding and generally expressing a wish for big changes, 
-                                at the end of the day, they were ACCEPTED as new customs' projects. This project already went in the process of applying for EU funds, 
-                                while another one was desired to put it into test use as early as next month.</p>
-
-                            <p>More specific details regarding the project are not given here due to the data confidentiality.</p>
-                                
-                            <div class="mh-about-tag">
-                                <ul>
-                                    <li><span>web</span></li>
-                                    <li><span>mobile</span></li>
-                                    <li><span>customs</span></li>
-                                    <li><span>EU</span></li>
-                                    <li><span>goverment</span></li>
-                                    <li><span>pets</span></li>
-                                    <li><span>prototype</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="mh-portfolio-modal-img">
-                                <img src="assets/images/portfolio/safe5_preview.png" alt="safe5_preview" class="img-fluid">
-                                <p>Prototype preview</p>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <!-- ─── CONTACT ───────────────────────────── -->
+  <footer id="contact">
+    <div class="container">
+      <p class="section-label">contact</p>
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="contact-card-icon"><i class="fa-solid fa-location-arrow"></i></div>
+              <div>
+                <h4>Location</h4>
+                <address>Dubrovnik, Croatia</address>
+              </div>
             </div>
-            <!-- END SAFE5 -->
-
-        </section>
-        
-        <!--
-        ===================
-           BLOG
-        ===================
-        -->
-        <section class="mh-blog" id="mh-blog">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                        <h3>Featured Posts</h3>
-                    </div>
-                    <div class="col-md-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                        <h4>Blog content is cooming soon.</h4>
-                    </div>
-                </div>
+            <div class="contact-card">
+              <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:kristovic.jakov@gmail.com">kristovic.jakov@gmail.com</a>
+              </div>
             </div>
-        </section>
-        
-        <!--
-        ===================
-           FOOTER 1
-        ===================
-        -->
-        <footer class="mh-footer" id="mh-contact">
-            <div class="map-image image-bg">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                            <h3>Contact Me</h3>
-                        </div>
-                        <div class="col-sm-12 mh-footer-address">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                        <div class="each-icon">
-                                            <i class="fa fa-location-arrow"></i>
-                                        </div>
-                                        <div class="each-info">
-                                            <h4>Location</h4>
-                                            <address>
-                                                Dubrovnik, Croatia
-                                            </address>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                        <div class="each-icon">
-                                            <i class="fa fa-envelope-o"></i>
-                                        </div>
-                                        <div class="each-info">
-                                            <h4>Email</h4>
-                                            <a href="mailto:kristovic.jakov@gmail.com">kristovic.jakov@gmail.com</a><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                        <div class="each-icon">
-                                            <i class="fa fa-phone"></i>
-                                        </div>
-                                        <div class="each-info">
-                                            <h4>Phone</h4>
-                                            <a href="mailto:kristovic.jakov@gmail.com" class="font-weight-bold j-highlight">Ask for number!</a><br>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <form id="contactForm" method="POST" action="https://formspree.io/f/mvowlwon" class="single-form quate-form wow fadeInUp" data-toggle="validator">
-                                <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-12">
-                                        <input name="name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <input name="name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <textarea class="contact-message" id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
-                                    </div>
-                                    <!-- Subject Button -->
-                                    <div class="btn-form col-sm-12">
-                                        <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <div class="mh-map">
-                                <div id="map" class="mh-map shadow-1"></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="text-left text-xs-center">
-                                        <p>Copyright &copy; Jakov Kristović <span id="year-container">2022</span></p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="social-icon">
-                                        <li><a href="https://www.linkedin.com/in/jakovkristovic/"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="https://github.com/TheJakov"><i class="fa fa-github"></i></a></li>
-                                        <li><a href="https://www.facebook.com/jakov.kristovic"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="https://www.instagram.com/jakovk7/"><i class="fa fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="contact-card">
+              <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <a href="mailto:kristovic.jakov@gmail.com">Ask for number!</a>
+              </div>
             </div>
-        </footer>     
-    
-    <!--
-    ==============
-    * JS Files *
-    ==============
-    -->
-    
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-    <!-- jQuery -->
-    <script src="assets/plugins/js/jquery.min.js"></script>
-    <!-- popper -->
-    <script src="assets/plugins/js/popper.min.js"></script>
-    <!-- bootstrap -->
-    <script src="assets/plugins/js/bootstrap.min.js"></script>
-    <!-- owl carousel -->
-    <script src="assets/plugins/js/owl.carousel.js"></script>
-    <!-- validator -->
-    <script src="assets/plugins/js/validator.min.js"></script>
-    <!-- wow -->
-    <script src="assets/plugins/js/wow.min.js"></script>
-    <!-- mixin js-->
-    <script src="assets/plugins/js/jquery.mixitup.min.js"></script>
-    <!-- circle progress-->
-    <script src="assets/plugins/js/circle-progress.js"></script>
-    <!-- jquery nav -->
-    <script src="assets/plugins/js/jquery.nav.js"></script>
-    <!-- Fancybox js-->
-    <script src="assets/plugins/js/jquery.fancybox.min.js"></script>
-    <!-- isotope js-->
-    <script src="assets/plugins/js/isotope.pkgd.js"></script>
-    <script src="assets/plugins/js/packery-mode.pkgd.js"></script>
-    <!-- Map api -->
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
-    <!-- Custom Scripts-->
-    <script src="assets/js/map-init.js"></script>
-    <script src="assets/js/custom-scripts.js"></script>
+          </div>
+          <div class="map-wrap">
+            <div id="map"></div>
+          </div>
+        </div>
+        <div>
+          <form id="contactForm" method="POST" action="https://formspree.io/f/mvowlwon" class="contact-form">
+            <div class="form-row">
+              <input name="firstName" type="text" placeholder="First Name" required>
+              <input name="lastName" type="text" placeholder="Last Name" required>
+            </div>
+            <input name="email" type="email" placeholder="Your Email" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn btn-primary" style="justify-content:center;">Send Message</button>
+          </form>
+        </div>
+      </div>
 
-    <script>
-        $(function(){
-            setCurrentYear();
+      <div class="footer-bar">
+        <p class="footer-copy">Copyright &copy; Jakov Kristović <span id="year-container">2022</span></p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/jakovkristovic/" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/TheJakov" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.facebook.com/jakov.kristovic" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/jakovkristovic/" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── SCRIPTS ───────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
+  <script src="assets/js/map-init.js"></script>
+
+  <script>
+    // Year
+    document.getElementById('year-container').textContent = new Date().getFullYear();
+
+    // Nav mobile toggle
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    // Active nav link on scroll
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section, footer');
+
+    // Attach observer to each section
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+    sections.forEach(s => navObserver.observe(s));
+
+    // Skill bar animation
+    const skillFills = document.querySelectorAll('.skill-fill');
+    const skillObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        skillFills.forEach((el, i) => {
+          setTimeout(() => { el.style.width = el.dataset.width; }, i * 80);
         });
+        skillObserver.disconnect();
+      }
+    }, { threshold: 0.3 });
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) skillObserver.observe(skillsSection);
 
-        function setCurrentYear(){
-                let yearContainer = document.getElementById('year-container');
-                yearContainer.textContent = new Date().getFullYear();
-            }
-    </script>
+    // Portfolio filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+          card.style.display = (filter === '*' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+
+    // Portfolio modals — open
+    document.querySelectorAll('.portfolio-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const modal = document.getElementById('modal-' + card.dataset.modal);
+        if (modal) modal.classList.add('open');
+      });
+    });
+
+    // Portfolio modals — close
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', () => btn.closest('.modal-backdrop').classList.remove('open'));
+    });
+
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+      backdrop.addEventListener('click', e => {
+        if (e.target === backdrop) backdrop.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-backdrop.open').forEach(m => m.classList.remove('open'));
+      }
+    });
+  </script>
 </body>
 </html>
