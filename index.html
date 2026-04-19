@@ -620,6 +620,66 @@
     .modal-images img { border-radius: 8px; border: 1px solid var(--border); }
     .modal-images figcaption { font-size: 11px; color: var(--text-dim); margin-top: -6px; }
 
+    /* ─── WORK ───────────────────────────────── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .work-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: border-color .2s;
+    }
+    .work-card:hover { border-color: var(--accent-dim); }
+
+    .work-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .work-company {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .work-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .work-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .work-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card-header { flex-direction: column; }
+      .work-stack { justify-content: flex-start; }
+    }
+
     /* ─── BLOG ───────────────────────────────── */
     .blog-placeholder {
       background: var(--bg-2);
@@ -1012,247 +1072,44 @@
     </div>
   </section>
 
-  <!-- ─── PORTFOLIO ─────────────────────────── -->
+  <!-- ─── WORK ──────────────────────────────── -->
   <section id="portfolio">
     <div class="container">
-      <p class="section-label">portfolio</p>
-      <h2 class="section-title">Recent Portfolio</h2>
+      <p class="section-label">work</p>
+      <h2 class="section-title">What I've Shipped</h2>
+      <div class="work-grid">
 
-      <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="*">All</button>
-        <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
-        <button class="filter-btn" data-filter="gov-apps">Government</button>
-        <button class="filter-btn" data-filter="stem">STEM</button>
-      </div>
-
-      <div class="portfolio-grid">
-        <div class="portfolio-card" data-category="gov-apps" data-modal="safe5">
-          <img src="assets/images/portfolio/safe5_preview.png" alt="VET App">
-          <div class="portfolio-overlay"><h5>VET App</h5><span>Croatian Customs</span></div>
-        </div>
-        <div class="portfolio-card" data-category="gov-apps" data-modal="manualapp">
-          <img src="assets/images/portfolio/manualApp_preview.png" alt="Web manual">
-          <div class="portfolio-overlay"><h5>Web manual for customs inspection</h5><span>Croatian Customs</span></div>
-        </div>
-        <div class="portfolio-card" data-category="machine-learning" data-modal="carrecomm">
-          <img src="assets/images/portfolio/car_recomm_system.jpg" alt="Car Recommendation System">
-          <div class="portfolio-overlay"><h5>Car Recommendation System</h5><span>Recommender Systems</span></div>
-        </div>
-        <div class="portfolio-card" data-category="machine-learning" data-modal="vgre">
-          <img src="assets/images/portfolio/video_game_recomm_logo.png" alt="Video Game Recommendation Engine">
-          <div class="portfolio-overlay"><h5>Video Game Recommendation Engine</h5><span>Recommender Systems</span></div>
-        </div>
-        <div class="portfolio-card" data-modal="passlock">
-          <img src="assets/images/portfolio/PassLock-logov4.png" alt="PassLock">
-          <div class="portfolio-overlay"><h5>PassLock</h5><span>Password Manager</span></div>
-        </div>
-        <div class="portfolio-card" data-category="stem" data-modal="mranger">
-          <img src="assets/images/portfolio/stem.png" alt="mRanger">
-          <div class="portfolio-overlay"><h5>mRanger</h5><span>STEM</span></div>
-        </div>
-        <div class="portfolio-card" data-modal="newsTracker">
-          <img src="assets/images/portfolio/newstracker.png" alt="newsTracker">
-          <div class="portfolio-overlay"><h5>newsTracker</h5><span>Multi-agent News Tracking</span></div>
-        </div>
-      </div>
-
-      <div class="view-more">
-        <a href="https://www.linkedin.com/in/jakovkristovic/" class="btn btn-outline">
-          <i class="fa-solid fa-code"></i>&nbsp; View all projects on LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <!-- Modal: newsTracker -->
-    <div class="modal-backdrop" id="modal-newsTracker">
-      <div class="modal-content">
-        <button class="modal-close" data-close>✕</button>
-        <div class="modal-body">
-          <div class="modal-info">
-            <h2>NewsTracker</h2>
-            <p>Multi-agent news tracking system made in Python using SPADE platform.</p>
-            <div class="tag-list">
-              <span class="tag">python</span><span class="tag">agent</span><span class="tag">news</span>
-              <span class="tag">scraping</span><span class="tag">multiagent-systems</span><span class="tag">spade</span>
+        <div class="work-card">
+          <div class="work-card-header">
+            <div>
+              <span class="work-company">Autodesk Fusion</span>
+              <h3 class="work-title">Fusion BOM</h3>
             </div>
-            <a href="https://github.com/TheJakov/newsTracker" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
-          </div>
-          <div class="modal-images">
-            <img src="assets/images/portfolio/newstracker.png" alt="newstracker">
-            <figcaption>System architecture</figcaption>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal: mRanger -->
-    <div class="modal-backdrop" id="modal-mranger">
-      <div class="modal-content">
-        <button class="modal-close" data-close>✕</button>
-        <div class="modal-body">
-          <div class="modal-info">
-            <h2>mRanger</h2>
-            <p>Developed and designed an Android based app where a mobile phone communicates with m:Bot via Bluetooth. My role was as a C++ (Visual Studio/Arduino), Prolog (SWI-Prolog), PHP and Android Java developer (Android Studio). SCRUM agile methodology was used.</p>
-            <p>Purpose of project was making learning materials for high school students of Croatia covering Android development fundamentals and logical programming concepts. The m:Bot Ranger device communicates with the Android app via Bluetooth, enabling remote control and temperature measurement. Prolog infers weather season and time-of-day context. Website available at mranger.foi.hr.</p>
-            <div class="tag-list">
-              <span class="tag">android</span><span class="tag">java</span><span class="tag">robotics</span>
-              <span class="tag">stem</span><span class="tag">php</span><span class="tag">sensor</span>
-              <span class="tag">bluetooth</span><span class="tag">swi-prolog</span><span class="tag">mysql</span>
-            </div>
-            <a href="https://github.com/TheJakov/mRanger" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
-          </div>
-          <div class="modal-images">
-            <img src="assets/images/portfolio/mranger-syst-arch.png" alt="mRanger system architecture">
-            <figcaption>Simple overview of data flows</figcaption>
-            <img src="assets/images/portfolio/mranger-disp-1.png" alt="mRanger UI">
-            <figcaption>UI overview</figcaption>
-            <img src="assets/images/portfolio/mranger-disp-2.png" alt="mRanger temperature">
-            <figcaption>Measuring temperature</figcaption>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal: PassLock -->
-    <div class="modal-backdrop" id="modal-passlock">
-      <div class="modal-content">
-        <button class="modal-close" data-close>✕</button>
-        <div class="modal-body">
-          <div class="modal-info">
-            <h2>PassLock</h2>
-            <p>The application allows the user to enter and/or generate the desired password and save it in a hashed format.</p>
-            <p>The user has a record of his stored hash passwords and can easily copy and use the password to log in with his account to the services or social networks he uses.</p>
-            <p>The purpose of this application is to increase security on the Internet — encouraging the use of passwords that are difficult to crack using typical 'Dictionary Attack' or similar brute force methods.</p>
-            <div class="tag-list">
-              <span class="tag">C#</span><span class="tag">security</span><span class="tag">encryption</span>
-              <span class="tag">password-manager</span><span class="tag">desktop</span><span class="tag">sqlite</span>
-            </div>
-            <a href="https://github.com/TheJakov/PassLock" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
-          </div>
-          <div class="modal-images">
-            <img src="assets/images/portfolio/passlock-disp1.png" alt="PassLock UI">
-            <figcaption>UI overview</figcaption>
-            <img src="assets/images/portfolio/passlock-disp2.PNG" alt="PassLock UI 2">
-            <figcaption>UI overview #2</figcaption>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal: Video Game Recommendation Engine -->
-    <div class="modal-backdrop" id="modal-vgre">
-      <div class="modal-content">
-        <button class="modal-close" data-close>✕</button>
-        <div class="modal-body">
-          <div class="modal-info">
-            <h2>Video Game Recommendation Engine</h2>
-            <p>Intelligent system (application) for user profiling and proposing the most suitable video games. Developed using .NET technologies and ML .NET (an open source and cross-platform machine learning framework).</p>
-            <div class="tag-list">
-              <span class="tag">C#</span><span class="tag">gaming</span><span class="tag">recommender-systems</span>
-              <span class="tag">intelligent-systems</span><span class="tag">desktop</span>
-              <span class="tag">machine-learning</span><span class="tag">ML.NET</span>
-            </div>
-            <a href="https://github.com/TheJakov/VideoGameRecommendationEngineAI" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
-          </div>
-          <div class="modal-images">
-            <img src="assets/images/portfolio/vgre_1.png" alt="VGRE home screen">
-            <figcaption>Home screen</figcaption>
-            <img src="assets/images/portfolio/vgre_2.png" alt="VGRE profiling">
-            <figcaption>Example of a question in user profiling</figcaption>
-            <img src="assets/images/portfolio/vgre_3.png" alt="VGRE profiling 2">
-            <figcaption>Example of a question in user profiling #2</figcaption>
-            <img src="assets/images/portfolio/vgre_4.png" alt="VGRE profiling 3">
-            <figcaption>Example of a question in user profiling #3</figcaption>
-            <img src="assets/images/portfolio/vgre_5.png" alt="VGRE results">
-            <figcaption>Result — end screen (two profiling algorithms)</figcaption>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal: Car Recommendation System -->
-    <div class="modal-backdrop" id="modal-carrecomm">
-      <div class="modal-content">
-        <button class="modal-close" data-close>✕</button>
-        <div class="modal-body">
-          <div class="modal-info">
-            <h2>Car Recommendation System</h2>
-            <p>This application was developed as part of my graduate thesis, in the domain of recommender systems. The application performs user profiling and, based on his preferences, suggests top car recommendations that might suit him.</p>
-            <p>Application has two components that generate recommendations:</p>
-            <ol>
-              <li>custom made scoring algorithm and</li>
-              <li>ML model created via ML .NET machine learning framework.</li>
-            </ol>
-            <p>You can even check out the <a href="https://www.youtube.com/watch?v=RdYZqLjNA_o" class="j-highlight">video preview</a>.</p>
-            <div class="tag-list">
-              <span class="tag">C#</span><span class="tag">cars</span><span class="tag">recommender-systems</span>
-              <span class="tag">intelligent-systems</span><span class="tag">desktop</span>
-              <span class="tag">machine-learning</span><span class="tag">ML.NET</span>
-            </div>
-            <a href="https://github.com/TheJakov/CarRecommendationSystem" class="btn btn-outline"><i class="fa-brands fa-github"></i>&nbsp; Github</a>
-          </div>
-          <div class="modal-images">
-            <img src="assets/images/portfolio/crs_1.png" alt="Car recommender home">
-            <figcaption>Home screen</figcaption>
-            <img src="assets/images/portfolio/crs_2.png" alt="Car recommender profiling">
-            <figcaption>Example of a question in user profiling</figcaption>
-            <img src="assets/images/portfolio/crs_3.png" alt="Car recommender profiling 2">
-            <figcaption>Example of a question in user profiling #2</figcaption>
-            <img src="assets/images/portfolio/crs_4.png" alt="Car recommender profiling 3">
-            <figcaption>Example of a question in user profiling #3</figcaption>
-            <img src="assets/images/portfolio/crs_results.png" alt="Car recommender results">
-            <figcaption>Result — end screen (two profiling algorithms)</figcaption>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal: Web manual for customs inspection -->
-    <div class="modal-backdrop" id="modal-manualapp">
-      <div class="modal-content">
-        <button class="modal-close" data-close>✕</button>
-        <div class="modal-body">
-          <div class="modal-info">
-            <h2>Web manual for customs inspection</h2>
-            <p>Development of digital educational materials in form of a manual for additional staff training, in cooperation with Croatian Customs office.</p>
-            <p>The purpose of the materials produced is to improve the knowledge and awareness of the trainees, in order to improve the performance of their daily work and give them a broader picture of the skills and current trends of smugglers.</p>
-            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration. Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
-            <p>Even though government departments are very sluggish today, at the end of the day they were ACCEPTED as new customs' projects — one went in the process of applying for EU funds, while this one was desired for test use as early as the next month.</p>
-            <p>More specific details regarding the project are not given here due to data confidentiality.</p>
-            <div class="tag-list">
-              <span class="tag">ASP.NET MVC</span><span class="tag">vehicles</span><span class="tag">eLearning</span>
-              <span class="tag">inspection</span><span class="tag">customs</span><span class="tag">EU</span><span class="tag">government</span>
+            <div class="work-stack">
+              <span class="tag">React.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">AWS</span>
             </div>
           </div>
-          <div class="modal-images">
-            <img src="assets/images/portfolio/manualApp_preview.png" alt="Manual App preview">
-            <figcaption>Part of interactive app screen</figcaption>
-          </div>
+          <p class="work-desc">Building a next-generation Bill of Materials experience for Autodesk Fusion — in production, at Autodesk scale. React, Node.js and GraphQL powering a feature used by millions of engineers and designers worldwide. Still shipping.</p>
         </div>
-      </div>
-    </div>
 
-    <!-- Modal: VET App (SAFE5) -->
-    <div class="modal-backdrop" id="modal-safe5">
-      <div class="modal-content">
-        <button class="modal-close" data-close>✕</button>
-        <div class="modal-body">
-          <div class="modal-info">
-            <h2>VET App</h2>
-            <p>The very purpose of this application is to help Croatian Customs officers in the inspection of pets, which may consist of several different steps with multiple legislative regulations, and is just one of the many tasks that staff must perform on a daily basis.</p>
-            <p>In September 2021, I had the opportunity to present prototypes and pilot applications of my solutions to the Croatian customs administration. Applications served to improve the situation at the Croatian borders and contribute to the overall situation at the external borders of the European Union.</p>
-            <p>Even though government departments are very sluggish today, at the end of the day they were ACCEPTED as new customs' projects — this project already went in the process of applying for EU funds.</p>
-            <p>More specific details regarding the project are not given here due to data confidentiality.</p>
-            <div class="tag-list">
-              <span class="tag">web</span><span class="tag">mobile</span><span class="tag">customs</span>
-              <span class="tag">EU</span><span class="tag">government</span><span class="tag">pets</span><span class="tag">prototype</span>
+        <div class="work-card">
+          <div class="work-card-header">
+            <div>
+              <span class="work-company">Autodesk Upchain</span>
+              <h3 class="work-title">CAD Connector</h3>
+            </div>
+            <div class="work-stack">
+              <span class="tag">C#</span>
+              <span class="tag">.NET Core</span>
+              <span class="tag">.NET Framework</span>
             </div>
           </div>
-          <div class="modal-images">
-            <img src="assets/images/portfolio/safe5_preview.png" alt="VET App preview">
-            <figcaption>Prototype preview</figcaption>
-          </div>
+          <p class="work-desc">Shipped a native plugin embedded into SolidWorks, Inventor, AutoCAD, NX, CATIA, Creo and Office tools — letting millions of engineers version and revision CAD designs directly to the cloud. Architected a single .NET codebase supporting both .NET Framework and .NET Core runtimes natively across the entire CAD ecosystem.</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -1336,42 +1193,6 @@
     const skillsSection = document.getElementById('skills');
     if (skillsSection) skillObserver.observe(skillsSection);
 
-    // Portfolio filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.portfolio-card').forEach(card => {
-          card.style.display = (filter === '*' || card.dataset.category === filter) ? '' : 'none';
-        });
-      });
-    });
-
-    // Portfolio modals — open
-    document.querySelectorAll('.portfolio-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const modal = document.getElementById('modal-' + card.dataset.modal);
-        if (modal) modal.classList.add('open');
-      });
-    });
-
-    // Portfolio modals — close
-    document.querySelectorAll('[data-close]').forEach(btn => {
-      btn.addEventListener('click', () => btn.closest('.modal-backdrop').classList.remove('open'));
-    });
-
-    document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
-      backdrop.addEventListener('click', e => {
-        if (e.target === backdrop) backdrop.classList.remove('open');
-      });
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.modal-backdrop.open').forEach(m => m.classList.remove('open'));
-      }
-    });
   </script>
 </body>
 </html>
