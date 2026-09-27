@@ -275,37 +275,10 @@
     }
     .about-text a { font-weight: 600; }
 
-    /* ─── SERVICES ───────────────────────────── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .service-card {
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 24px;
-      transition: border-color .2s;
-    }
-    .service-card:hover { border-color: var(--accent-dim); }
-
-    .service-icon { font-size: 20px; margin-bottom: 16px; }
-
-    .service-card h3 {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-
-    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
-
     /* ─── EXPERIENCE ─────────────────────────── */
     .exp-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 3fr 2fr;
       gap: 64px;
     }
 
@@ -745,7 +718,6 @@
     /* ─── RESPONSIVE ─────────────────────────── */
     @media (max-width: 900px) {
       .hero-grid, .about-grid, .exp-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
       .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-img-wrap { max-width: 300px; margin: 0 auto; }
       .modal-body { grid-template-columns: 1fr; }
@@ -754,7 +726,7 @@
 
     @media (max-width: 600px) {
       :root { --pad: 56px 0; }
-      .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .nav-links { display: none; position: absolute; top: 55px; left: 0; right: 0; background: var(--bg-2); border-bottom: 1px solid var(--border); flex-direction: column; padding: 16px 24px; gap: 14px; }
       .nav-links.open { display: flex; }
@@ -775,8 +747,8 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="#home">home</a></li>
           <li><a href="#about">about</a></li>
+          <li><a href="#work">work</a></li>
           <li><a href="#experience">experience</a></li>
-          <li><a href="#portfolio">portfolio</a></li>
           <li><a href="#contact">contact</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -826,23 +798,25 @@
         </div>
         <div>
           <p class="about-text">Hey, I'm Jakov — a Senior Software Development Engineer at <a href="https://www.autodesk.com/">Autodesk</a>, based in Dubrovnik.
-            These days I live mostly in <a href="https://react.dev/">React</a>, <a href="https://nodejs.org/">Node.js</a>, and JavaScript — building scalable,
+            These days I live mostly in <a href="https://react.dev/">React</a>, <a href="https://www.typescriptlang.org/">TypeScript</a>, and <a href="https://nodejs.org/">Node.js</a> — building scalable,
             product-grade features that ship to millions of users worldwide.
             My roots are in <a href="https://dotnet.microsoft.com/">.NET and C#</a>, which still shape how I think about architecture and clean backend design.
             I care about writing code that's readable, fast, and built to last.</p>
           <div class="tag-list">
+            <span class="tag">TypeScript</span>
             <span class="tag">JavaScript</span>
             <span class="tag">React</span>
             <span class="tag">Node.js</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">MCP</span>
+            <span class="tag">C#</span>
             <span class="tag">.NET Core</span>
             <span class="tag">.NET Framework</span>
             <span class="tag">ASP .NET</span>
-            <span class="tag">C#</span>
+            <span class="tag">Blazor</span>
             <span class="tag">SQL Server</span>
-            <span class="tag">html</span>
-            <span class="tag">css</span>
             <span class="tag">PWAs</span>
-            <span class="tag">artificial intelligence</span>
           </div>
           <a href="https://www.linkedin.com/in/jakovkristovic/" class="btn btn-primary">
             Check me out on LinkedIn&nbsp;<i class="fa-brands fa-linkedin-in"></i>
@@ -852,27 +826,75 @@
     </div>
   </section>
 
-  <!-- ─── SERVICES ──────────────────────────── -->
-  <section id="services">
+  <!-- ─── WORK ──────────────────────────────── -->
+  <section id="work">
     <div class="container">
-      <p class="section-label">services</p>
-      <h2 class="section-title">What I Do</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon" style="color:var(--accent)"><i class="fa-brands fa-react"></i></div>
-          <h3>Frontend Engineering</h3>
-          <p>Building performant, scalable UIs in React — from component architecture and state management to seamless UX. I focus on code that's maintainable at scale, not just code that works today.</p>
+      <p class="section-label">work</p>
+      <h2 class="section-title">What I've Shipped</h2>
+      <div class="work-grid">
+
+        <div class="work-card">
+          <div class="work-card-header">
+            <div>
+              <span class="work-company">Autodesk Fusion</span>
+              <h3 class="work-title">Fusion BOM</h3>
+            </div>
+            <div class="work-stack">
+              <span class="tag">React.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+          <p class="work-desc">Building a next-generation Bill of Materials experience for Autodesk Fusion — in production, at Autodesk scale. React, Node.js and GraphQL powering a feature used by engineers and designers worldwide. Still shipping.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon" style="color:#888"><i class="fa-brands fa-node-js"></i></div>
-          <h3>Backend & APIs</h3>
-          <p>Designing and shipping reliable Node.js services and REST APIs — with a sharp eye on performance, security, and clean contracts between systems. Backed by years of .NET architecture thinking.</p>
+
+        <div class="work-card">
+          <div class="work-card-header">
+            <div>
+              <span class="work-company">Autodesk Fusion</span>
+              <h3 class="work-title">Autodesk Assistant</h3>
+            </div>
+            <div class="work-stack">
+              <span class="tag">Python</span>
+              <span class="tag">MCP</span>
+              <span class="tag">AI workflows</span>
+            </div>
+          </div>
+          <p class="work-desc">Contributing to Autodesk Assistant inside Fusion — building tools on the MCP server side in Python, and authoring the internal skills that drive AI workflows over Bill of Materials data. The same BOM domain I build in the product itself, approached through an AI surface.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon" style="color:#6bc5ea"><i class="fa-solid fa-layer-group"></i></div>
-          <h3>Software at Scale</h3>
-          <p>At Autodesk, I work on software used by millions of engineers and designers worldwide. That means thinking beyond features — into reliability, observability, and long-term system health.</p>
+
+        <div class="work-card">
+          <div class="work-card-header">
+            <div>
+              <span class="work-company">Autodesk Upchain</span>
+              <h3 class="work-title">CAD Connector</h3>
+            </div>
+            <div class="work-stack">
+              <span class="tag">C#</span>
+              <span class="tag">.NET Core</span>
+              <span class="tag">.NET Framework</span>
+            </div>
+          </div>
+          <p class="work-desc">Shipped a native plugin embedded into SolidWorks, Inventor, AutoCAD, NX, CATIA, Creo and Office tools — letting millions of engineers version and revision CAD designs directly to the cloud. Architected a single .NET codebase supporting both .NET Framework and .NET Core runtimes natively across the entire CAD ecosystem.</p>
         </div>
+
+        <div class="work-card">
+          <div class="work-card-header">
+            <div>
+              <span class="work-company">Laus CC</span>
+              <h3 class="work-title">Argosy MIBIS</h3>
+            </div>
+            <div class="work-stack">
+              <span class="tag">C#</span>
+              <span class="tag">ASP .NET</span>
+              <span class="tag">Blazor</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <p class="work-desc">Built the microbiology laboratory modules of Argosy MIBIS — a laboratory information system running in national health institutes across Croatia — and MIBIS Tap, its portable tablet edition. Primary engineer on both, from database schema through to the UI.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -886,17 +908,16 @@
           <p class="exp-heading">// Work Experience</p>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-year">Oct 2025 — present</div>
-              <h4 class="timeline-title">Senior Software Development Engineer at <a href="https://www.autodesk.com/">Autodesk</a></h4>
-              <ul class="timeline-resp">
-                <li>React.js, Node.js, JavaScript, GraphQL, AWS</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">Oct 2022 — Oct 2025</div>
+              <div class="timeline-year">Oct 2022 — present</div>
               <h4 class="timeline-title">Software Development Engineer at <a href="https://www.autodesk.com/">Autodesk</a></h4>
+              <ul class="timeline-roles">
+                <li><span class="role-date">Oct 2025 – present</span> Senior Software Development Engineer</li>
+                <li><span class="role-date">Oct 2022 – Oct 2025</span> Software Development Engineer</li>
+              </ul>
               <ul class="timeline-resp">
-                <li>C#, .NET Framework, .NET Core, Node.js, React.js</li>
+                <li>React.js, TypeScript, Node.js, GraphQL, AWS</li>
+                <li>Python, MCP — AI tooling for Autodesk Assistant</li>
+                <li>C#, .NET Framework, .NET Core</li>
               </ul>
             </div>
             <div class="timeline-item">
@@ -933,52 +954,9 @@
             <div class="timeline-item">
               <div class="timeline-year">2015 — 2018</div>
               <h4 class="timeline-title">Bachelor's degree in Informational Systems — <a href="https://www.foi.unizg.hr/">FOI</a></h4>
-              <p class="timeline-desc">Informational systems — At this point I was sharpening my skills to become a software engineer and do what I love the most — develop cool things which will find their purposes in real life.</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── WORK ──────────────────────────────── -->
-  <section id="portfolio">
-    <div class="container">
-      <p class="section-label">work</p>
-      <h2 class="section-title">What I've Shipped</h2>
-      <div class="work-grid">
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <div>
-              <span class="work-company">Autodesk Fusion</span>
-              <h3 class="work-title">Fusion BOM</h3>
-            </div>
-            <div class="work-stack">
-              <span class="tag">React.js</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">GraphQL</span>
-              <span class="tag">AWS</span>
-            </div>
-          </div>
-          <p class="work-desc">Building a next-generation Bill of Materials experience for Autodesk Fusion — in production, at Autodesk scale. React, Node.js and GraphQL powering a feature used by millions of engineers and designers worldwide. Still shipping.</p>
-        </div>
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <div>
-              <span class="work-company">Autodesk Upchain</span>
-              <h3 class="work-title">CAD Connector</h3>
-            </div>
-            <div class="work-stack">
-              <span class="tag">C#</span>
-              <span class="tag">.NET Core</span>
-              <span class="tag">.NET Framework</span>
-            </div>
-          </div>
-          <p class="work-desc">Shipped a native plugin embedded into SolidWorks, Inventor, AutoCAD, NX, CATIA, Creo and Office tools — letting millions of engineers version and revision CAD designs directly to the cloud. Architected a single .NET codebase supporting both .NET Framework and .NET Core runtimes natively across the entire CAD ecosystem.</p>
-        </div>
-
       </div>
     </div>
   </section>
