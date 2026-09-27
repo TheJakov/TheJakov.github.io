@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Jakov Kristović — Senior Software Development Engineer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jakov Kristović - Software Engineer's personal website">
-  <meta name="developer" content="Jakov Kristović">
+
+  <title>Jakov Kristović — Senior Software Development Engineer</title>
+  <meta name="description" content="Senior Software Development Engineer at Autodesk, based in Dubrovnik. React, TypeScript and Node.js on Autodesk Fusion; Python and MCP tooling for Autodesk Assistant.">
+  <link rel="canonical" href="https://thejakov.github.io/">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Jakov Kristović">
+  <meta property="og:url" content="https://thejakov.github.io/">
+  <meta property="og:title" content="Jakov Kristović — Senior Software Development Engineer">
+  <meta property="og:description" content="Senior Software Development Engineer at Autodesk, based in Dubrovnik. React, TypeScript and Node.js on Autodesk Fusion; Python and MCP tooling for Autodesk Assistant.">
+  <meta property="og:image" content="https://thejakov.github.io/assets/images/jakov.png">
+  <meta property="og:image:width" content="1254">
+  <meta property="og:image:height" content="1254">
+  <meta property="og:image:alt" content="Portrait of Jakov Kristović">
+  <meta property="profile:first_name" content="Jakov">
+  <meta property="profile:last_name" content="Kristović">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jakov Kristović — Senior Software Development Engineer">
+  <meta name="twitter:description" content="Senior Software Development Engineer at Autodesk, based in Dubrovnik. React, TypeScript and Node.js on Autodesk Fusion; Python and MCP tooling for Autodesk Assistant.">
+  <meta name="twitter:image" content="https://thejakov.github.io/assets/images/jakov.png">
+  <meta name="twitter:image:alt" content="Portrait of Jakov Kristović">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
@@ -34,7 +54,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 
     body {
       background: var(--bg);
@@ -57,6 +77,30 @@
 
     /* ─── LAYOUT ─────────────────────────────── */
     .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── A11Y ───────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 300;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 0 0 7px 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .skip-link:focus {
+      left: 0;
+      color: #fff;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-bright);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
 
     /* ─── NAV ────────────────────────────────── */
     #nav {
@@ -152,9 +196,6 @@
 
     .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
     .btn-primary:hover { background: var(--accent-bright); color: #fff; border-color: var(--accent-bright); }
-
-    .btn-outline { background: transparent; color: var(--text-muted); border-color: var(--border-2); }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ─── TAGS ───────────────────────────────── */
     .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
@@ -275,6 +316,66 @@
     }
     .about-text a { font-weight: 600; }
 
+    /* ─── WORK ───────────────────────────────── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .work-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: border-color .2s;
+    }
+    .work-card:hover { border-color: var(--accent-dim); }
+
+    .work-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .work-company {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .work-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .work-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .work-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card-header { flex-direction: column; }
+      .work-stack { justify-content: flex-start; }
+    }
+
     /* ─── EXPERIENCE ─────────────────────────── */
     .exp-grid {
       display: grid;
@@ -360,223 +461,6 @@
 
     .timeline-desc { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
 
-    /* ─── PORTFOLIO ──────────────────────────── */
-    .portfolio-filters {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 5px 13px;
-      border-radius: 6px;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid var(--border);
-      background: var(--bg-2);
-      color: var(--text-muted);
-      transition: all .2s;
-    }
-    .filter-btn.active, .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .portfolio-card {
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      aspect-ratio: 4/3;
-      background: var(--bg-2);
-      transition: border-color .2s;
-    }
-    .portfolio-card:hover { border-color: var(--border-2); }
-
-    .portfolio-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease;
-    }
-    .portfolio-card:hover img { transform: scale(1.05); }
-
-    .portfolio-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(10,10,10,.93) 0%, transparent 55%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 18px;
-      opacity: 0;
-      transition: opacity .3s;
-    }
-    .portfolio-card:hover .portfolio-overlay { opacity: 1; }
-
-    .portfolio-overlay h5 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-    .portfolio-overlay span { font-size: 11px; color: var(--accent); }
-
-    .view-more { text-align: center; margin-top: 36px; }
-
-    /* ─── PORTFOLIO MODALS ───────────────────── */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.88);
-      z-index: 500;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-backdrop.open { display: flex; }
-
-    .modal-content {
-      background: var(--bg-2);
-      border: 1px solid var(--border-2);
-      border-radius: 12px;
-      max-width: 880px;
-      width: 100%;
-      max-height: 88vh;
-      overflow-y: auto;
-      position: relative;
-    }
-
-    .modal-close {
-      position: sticky;
-      top: 12px;
-      float: right;
-      margin: 12px 12px 0 0;
-      background: var(--bg-3);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      width: 30px;
-      height: 30px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-family: var(--mono);
-      font-size: 14px;
-      z-index: 10;
-      transition: all .2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-close:hover { border-color: var(--accent); color: var(--accent); }
-
-    .modal-body {
-      clear: both;
-      display: grid;
-      grid-template-columns: 2fr 3fr;
-    }
-
-    .modal-info {
-      padding: 32px;
-      border-right: 1px solid var(--border);
-    }
-
-    .modal-info h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-
-    .modal-info p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 10px;
-    }
-
-    .modal-info ol {
-      padding-left: 18px;
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 10px;
-    }
-
-    .modal-info a.j-highlight { color: var(--accent); font-weight: 600; }
-
-    .modal-images {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .modal-images img { border-radius: 8px; border: 1px solid var(--border); }
-    .modal-images figcaption { font-size: 11px; color: var(--text-dim); margin-top: -6px; }
-
-    /* ─── WORK ───────────────────────────────── */
-    .work-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .work-card {
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-      transition: border-color .2s;
-    }
-    .work-card:hover { border-color: var(--accent-dim); }
-
-    .work-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .work-company {
-      display: block;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .work-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .work-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: flex-end;
-      flex-shrink: 0;
-    }
-
-    .work-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-
-    @media (max-width: 700px) {
-      .work-grid { grid-template-columns: 1fr; }
-      .work-card-header { flex-direction: column; }
-      .work-stack { justify-content: flex-start; }
-    }
-
     /* ─── CURSOR ─────────────────────────────── */
     .blink {
       display: inline-block;
@@ -590,66 +474,6 @@
     @keyframes blink { 50% { opacity: 0; } }
 
     /* ─── CONTACT ────────────────────────────── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-
-    .contact-cards { display: flex; flex-direction: column; gap: 12px; }
-
-    .contact-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
-    }
-
-    .contact-card-icon { color: var(--accent); width: 16px; flex-shrink: 0; margin-top: 2px; font-size: 14px; }
-
-    .contact-card h4 {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      margin-bottom: 4px;
-    }
-    .contact-card p, .contact-card a, .contact-card address { font-size: 13px; color: var(--text); }
-
-    .map-wrap {
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      height: 180px;
-      margin-top: 12px;
-    }
-    #map { width: 100%; height: 100%; }
-
-    .contact-form { display: flex; flex-direction: column; gap: 11px; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
-
-    input, textarea {
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 11px 14px;
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--text);
-      width: 100%;
-      transition: border-color .2s;
-      outline: none;
-    }
-    input:focus, textarea:focus { border-color: var(--accent); }
-    input::placeholder, textarea::placeholder { color: var(--text-dim); }
-    textarea { resize: vertical; min-height: 130px; }
-
-    /* ─── CONTACT MINIMAL ───────────────────── */
     .contact-minimal {
       max-width: 600px;
       padding: 48px 0 64px;
@@ -713,21 +537,24 @@
       border-top: 1px solid var(--border);
     }
     .footer-copy { font-size: 12px; color: var(--text-dim); }
-    .footer-socials { display: flex; gap: 8px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
 
     /* ─── RESPONSIVE ─────────────────────────── */
     @media (max-width: 900px) {
-      .hero-grid, .about-grid, .exp-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid, .about-grid, .exp-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-img-wrap { max-width: 300px; margin: 0 auto; }
-      .modal-body { grid-template-columns: 1fr; }
-      .modal-info { border-right: none; border-bottom: 1px solid var(--border); }
     }
 
     @media (max-width: 600px) {
       :root { --pad: 56px 0; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
       .nav-links { display: none; position: absolute; top: 55px; left: 0; right: 0; background: var(--bg-2); border-bottom: 1px solid var(--border); flex-direction: column; padding: 16px 24px; gap: 14px; }
       .nav-links.open { display: flex; }
       .nav-toggle { display: flex; align-items: center; justify-content: center; }
@@ -736,12 +563,14 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#home">Skip to content</a>
+
   <!-- ─── NAV ──────────────────────────────── -->
   <nav id="nav">
     <div class="container">
       <div class="nav-inner">
         <a class="nav-logo" href="#home">
-          <img src="assets/images/apple-touch-icon.png" alt="logo">
+          <img src="assets/images/apple-touch-icon.png" alt="">
           <span><span class="prompt">~/</span>jakov</span>
         </a>
         <ul class="nav-links" id="nav-links">
@@ -751,8 +580,8 @@
           <li><a href="#experience">experience</a></li>
           <li><a href="#contact">contact</a></li>
         </ul>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars"></i>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
       </div>
     </div>
@@ -770,14 +599,14 @@
           <h1 class="hero-name">Jakov<br>Kristović</h1>
           <p class="hero-subtitle">Senior Software Development Engineer</p>
           <ul class="hero-meta">
-            <li><span class="meta-icon"><i class="fa-solid fa-briefcase"></i></span><a href="https://www.autodesk.com/">Autodesk</a></li>
-            <li><span class="meta-icon"><i class="fa-solid fa-graduation-cap"></i></span>Master's in Informatics&thinsp;@&thinsp;<a href="https://www.foi.unizg.hr/">FOI</a></li>
-            <li><span class="meta-icon"><i class="fa-solid fa-envelope"></i></span><a href="mailto:kristovic.jakov@gmail.com">kristovic.jakov@gmail.com</a></li>
-            <li><span class="meta-icon"><i class="fa-solid fa-location-dot"></i></span>Dubrovnik, Croatia</li>
+            <li><span class="meta-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span><a href="https://www.autodesk.com/">Autodesk</a></li>
+            <li><span class="meta-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>Master's in Informatics&thinsp;@&thinsp;<a href="https://www.foi.unizg.hr/">FOI</a></li>
+            <li><span class="meta-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><a href="mailto:kristovic.jakov@gmail.com">kristovic.jakov@gmail.com</a></li>
+            <li><span class="meta-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>Dubrovnik, Croatia</li>
           </ul>
           <div class="hero-socials">
-            <a href="https://www.linkedin.com/in/jakovkristovic/" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/TheJakov" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jakovkristovic/" class="social-btn" aria-label="LinkedIn profile" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://github.com/TheJakov" class="social-btn" aria-label="GitHub profile" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
           </div>
         </div>
         <div class="hero-img-wrap">
@@ -819,7 +648,7 @@
             <span class="tag">PWAs</span>
           </div>
           <a href="https://www.linkedin.com/in/jakovkristovic/" class="btn btn-primary">
-            Check me out on LinkedIn&nbsp;<i class="fa-brands fa-linkedin-in"></i>
+            Check me out on LinkedIn&nbsp;<i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -903,9 +732,10 @@
   <section id="experience">
     <div class="container">
       <p class="section-label">experience</p>
+      <h2 class="section-title">Where I've Worked</h2>
       <div class="exp-grid">
         <div>
-          <p class="exp-heading">// Work Experience</p>
+          <h3 class="exp-heading">// Work Experience</h3>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-year">Oct 2022 — present</div>
@@ -944,7 +774,7 @@
           </div>
         </div>
         <div>
-          <p class="exp-heading">// Education</p>
+          <h3 class="exp-heading">// Education</h3>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-year">2018 — 2020</div>
@@ -970,8 +800,8 @@
         <p class="contact-sub">Whether it's an interesting project, a role worth discussing, or just a good engineering conversation — I'm reachable.</p>
         <a href="mailto:kristovic.jakov@gmail.com" class="contact-email">kristovic.jakov@gmail.com</a>
         <div class="contact-links">
-          <a href="https://www.linkedin.com/in/jakovkristovic/" class="contact-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-          <a href="https://github.com/TheJakov" class="contact-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/jakovkristovic/" class="contact-link"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
+          <a href="https://github.com/TheJakov" class="contact-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
         </div>
       </div>
 
@@ -989,13 +819,16 @@
 
     // Nav mobile toggle
     const navLinks = document.getElementById('nav-links');
-    document.getElementById('nav-toggle').addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
+    const navToggle = document.getElementById('nav-toggle');
+    const setNavOpen = open => {
+      navLinks.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    };
+    navToggle.addEventListener('click', () => setNavOpen(!navLinks.classList.contains('open')));
 
     // Close menu when a nav link is clicked
     navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
+      a.addEventListener('click', () => setNavOpen(false));
     });
 
     // Active nav link on scroll
@@ -1014,6 +847,52 @@
     }, { threshold: 0.35 });
     sections.forEach(s => navObserver.observe(s));
 
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jakov Kristović",
+    "givenName": "Jakov",
+    "familyName": "Kristović",
+    "url": "https://thejakov.github.io/",
+    "image": "https://thejakov.github.io/assets/images/jakov.png",
+    "jobTitle": "Senior Software Development Engineer",
+    "email": "mailto:kristovic.jakov@gmail.com",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Autodesk",
+      "url": "https://www.autodesk.com/"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Faculty of Organization and Informatics, University of Zagreb",
+      "url": "https://www.foi.unizg.hr/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubrovnik",
+      "addressCountry": "HR"
+    },
+    "knowsAbout": [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "GraphQL",
+      "Python",
+      "Model Context Protocol",
+      "C#",
+      ".NET",
+      "Blazor",
+      "SQL Server",
+      "AWS"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/jakovkristovic/",
+      "https://github.com/TheJakov"
+    ]
+  }
   </script>
 </body>
 </html>
